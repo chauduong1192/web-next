@@ -13,6 +13,7 @@
             "options": [120]
         },
         "import-name": false,
+        "no-var-requires": false,
         "align": [true, "statements", "members", "parameters"],
         "variable-name": [true, "allow-pascal-case"],
         "object-literal-sort-keys": [false],
