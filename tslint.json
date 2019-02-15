@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "tslint:latest",
+        "tslint-config-airbnb"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "next.config.js"
+        ]
+    },
+    "rules": {
+        "max-line-length": {
+            "options": [120]
+        },
+        "import-name": false,
+        "align": [true, "statements", "members", "parameters"],
+        "variable-name": [true, "allow-pascal-case"],
+        "object-literal-sort-keys": [false],
+        "no-submodule-imports": [true, "styled-jsx", "next", "@app"],
+        "no-implicit-dependencies": [false],
+        "no-this-assignment": [true, {"allow-destructuring": true}]
+    }
+}
