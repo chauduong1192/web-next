@@ -9,5 +9,13 @@
     "next": "^8.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
