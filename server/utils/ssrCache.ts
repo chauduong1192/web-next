@@ -8,7 +8,8 @@ const ssrCache = new LRUCache({ max, maxAge });
 
 const getCacheKey = req => req.url;
 
-const renderAndCache = app => async (req, res, pagePath, queryParams?) => {
+const renderAndCache = async (app, req, res, pagePath, queryParams?) => {
+
   const key = getCacheKey(req);
 
   // If we have a page in the cache, let's serve it
@@ -42,6 +43,4 @@ const renderAndCache = app => async (req, res, pagePath, queryParams?) => {
   }
 };
 
-export default ({ app }) => ({
-  handle: renderAndCache(app),
-});
+export default renderAndCache;

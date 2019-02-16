@@ -15,7 +15,7 @@ const routes = ({ dev }) => {
       req.path,
     );
 
-    res.sendFile(filePath);
+    res.status(200).sendFile(filePath);
   };
 
   STATIC_ASSETS_ROUTES.forEach((p) => {

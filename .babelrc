@@ -9,12 +9,7 @@
                 [
                     "module-resolver",
                     {
-                        "alias": {
-                            "@app": "./",
-                            "root": [
-                                "./"
-                            ]
-                        }
+                        "alias": {"@app": "./"}
                     }
                 ],
                 "inline-dotenv",
@@ -31,10 +26,7 @@
                     "module-resolver",
                     {
                         "alias": {
-                            "@app": "./",
-                            "root": [
-                                "./"
-                            ]
+                            "@app": "./"
                         }
                     }
                 ],

@@ -17,10 +17,7 @@ app.prepare()
     const server = express();
 
     // set cookie
-    server.use(cookieParser(cookieSecret, {
-      httpOnly: true,
-      secure: ['development', 'testing'].indexOf(process.env.NODE_ENV) === -1,
-    }));
+    server.use(cookieParser(cookieSecret));
 
     if (process.env.LOCAL_COMPRESSION) {
       const compression = require('compression');
@@ -32,10 +29,7 @@ app.prepare()
 
     // start app
     server.listen(port, host, (err) => {
-      if (err) {
-        throw err;
-      }
-
+      if (err) { throw err; }
       // tslint:disable-next-line:no-console
       console.log(`> App ready at http://${host}:${port}`);
     });
