@@ -4,6 +4,7 @@ import { i18n, Link, withNamespaces } from '@app/i18nnext';
 
 import Footer from '@app/components/Footer';
 import Title from '@app/components/Title';
+import Nav from '@app/components/Nav';
 
 class Homepage extends React.Component {
   public static async getInitialProps() {
@@ -16,6 +17,7 @@ class Homepage extends React.Component {
     const { t } = this.props;
     return (
       <>
+        <Nav />
         <Title />
         <button
           type="button"

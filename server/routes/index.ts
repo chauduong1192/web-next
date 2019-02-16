@@ -2,7 +2,7 @@ import { Router } from 'express';
 import * as next from 'next';
 import * as nextI18NextMiddleware from 'next-i18next/middleware';
 
-const nextI18next = require('../../i18nnext');
+const nextI18next = require('./../../i18nnext');
 import prettyUrlRouter from './prettyUrlRouter';
 import staticAssets from './staticAssets';
 import wildCard from './wildcard';

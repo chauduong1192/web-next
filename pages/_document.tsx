@@ -3,6 +3,7 @@ import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 import getConfig from 'next/config';
 
 import { ILocationProps, getLocation } from '../utils';
+import styles from './_style';
 
 const ASSET_PATH = '_next/static';
 const getFullAssetPath = (assetPrefix: string = '') => `${assetPrefix}/${ASSET_PATH}`;
@@ -222,6 +223,8 @@ class MyDocument extends Document<IMyDocumentProps> {
           <Main />
 
           <NextScript />
+
+          <style jsx global>{styles}</style>
         </body>
       </html>
     );

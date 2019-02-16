@@ -1,12 +1,20 @@
-const withTypescript = require('@zeit/next-typescript')
+const withTypescript = require('@zeit/next-typescript');
+const withPlugins = require('next-compose-plugins');
 
-module.exports = withTypescript({
-  webpack: config => {
+// compose next plugins and config
+const nextPlugins = [
+  withTypescript,
+];
+
+const nextConfig = {
+  // publicRuntimeConfig,
+  webpack(config) {
     // Fixes npm packages that depend on `fs` module
     config.node = {
-      fs: 'empty'
-    }
+      fs: 'empty',
+    };
 
-    return config
-  }
-});
+    return config;
+  },
+};
+module.exports = withPlugins(nextPlugins, nextConfig);
