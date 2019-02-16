@@ -6,7 +6,9 @@
     "linterOptions": {
         "exclude": [
             ".next/**/*.*",
-            "next.config.js"
+            "next.config.js",
+            "tailwind.config.js",
+            "postcss.config.js"
         ],
         "typeCheck": true
     },
