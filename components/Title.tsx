@@ -3,6 +3,8 @@ import React from 'react';
 
 import css from 'styled-jsx/css';
 
+import FacebookIcon from '@app/static/icons/facebook.svg';
+
 const styles = css`
   h1 {
     @apply text-red;
@@ -14,6 +16,7 @@ class Title extends React.Component {
     return (
       <>
         <style jsx>{styles}</style>
+        <FacebookIcon />
         <h1>
             <Trans i18nKey="h1" />
         </h1>

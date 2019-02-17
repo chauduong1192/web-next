@@ -1,1 +1,0 @@
-{"version":3,"file":"i18nnext.js","sourceRoot":"","sources":["../i18nnext.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,GAAG,OAAO,CAAC,cAAc,CAAC,CAAC,OAAO,CAAC;AAEpD,MAAM,eAAe,GAAG;IACtB,cAAc,EAAE,CAAC,IAAI,CAAC;IACtB,uBAAuB,EAAE,KAAK;CAC/B,CAAC;AAEF,MAAM,CAAC,OAAO,GAAG,IAAI,WAAW,CAAC,eAAe,CAAC,CAAC"}

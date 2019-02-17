@@ -9,7 +9,7 @@
         "allowSyntheticDefaultImports": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "removeComments": false,
+        "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
         "skipLibCheck": true,
@@ -26,6 +26,5 @@
     },
     "exclude": [
         "node_modules",
-        ".next",
     ]
 }

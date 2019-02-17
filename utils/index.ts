@@ -5,10 +5,10 @@ interface ILocationProps {
   origin: string;
 }
 
-const getLocation = (ctx: any): ILocationProps => ctx && ctx.req ? {
+const getLocation = (req: any) => req && req ? {
   // https://stackoverflow.com/a/10185427
-  fullUrl: `${ctx.req.protocol}://${ctx.req.get('host')}${ctx.req.originalUrl}`,
-  origin: `${ctx.req.protocol}://${ctx.req.get('host')}`,
+  fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+  origin: `${req.protocol}://${req.get('host')}`,
 } : undefined;
 
 export {

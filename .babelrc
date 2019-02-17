@@ -17,7 +17,8 @@
                     }
                 ],
                 "inline-dotenv",
-                "transform-inline-environment-variables"
+                "transform-inline-environment-variables",
+                "inline-react-svg"
             ]
         },
         "production": {
@@ -39,7 +40,8 @@
                     }
                 ],
                 "inline-dotenv",
-                "transform-inline-environment-variables"
+                "transform-inline-environment-variables",
+                "inline-react-svg"
             ]
         }
     }

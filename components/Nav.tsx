@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import css from 'styled-jsx/css';
 
-const links = [
-  { href: 'https://github.com/zeit/next.js', label: 'Github' },
-  { href: 'https://nextjs.org/docs', label: 'Docs' },
-];
-
 const styles = css`
   ul {
     @apply flex justify-between items-center p-8;
@@ -33,15 +28,6 @@ const Nav = () => {
               <a>Home</a>
             </Link>
           </li>
-          <ul>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <Link href={href}>
-                  <a>{label}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </ul>
       </nav>
     </>

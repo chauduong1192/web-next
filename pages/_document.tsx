@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 import getConfig from 'next/config';
 
-import { ILocationProps, getLocation } from '../utils';
+import { ILocationProps } from '@app/utils';
 import styles from './_style';
 
 const ASSET_PATH = '_next/static';
@@ -15,12 +15,12 @@ interface IMyDocumentProps extends DocumentProps {
 }
 
 class MyDocument extends Document<IMyDocumentProps> {
-  public static async getInitialProps(ctx) {
+  public static getInitialProps = async (ctx) => {
     const initialProps = await Document.getInitialProps(ctx);
 
     return {
       ...initialProps,
-      // location: getLocation(ctx),
+      // location: getLocation(req),
     };
   }
 
@@ -198,23 +198,27 @@ class MyDocument extends Document<IMyDocumentProps> {
       <html lang={props.initialLanguage}>
         <Head>
           <base href="/" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+          <meta charSet="utf-8" />
+          <meta httpEquiv="Content-type" content="text/html;charset=UTF-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
           {/* OG */}
           {/* {this.renderOGTags()} */}
 
           {/* iOS & Android */}
-          {/* {this.renderPwaTags()} */}
+          {this.renderPwaTags()}
 
           {/* Icons */}
-          {/* {this.renderIconTags()} */}
+          {this.renderIconTags()}
 
           {/* Other Tags */}
           {/* {this.renderOtherTags()} */}
 
           {/* GTM */}
           {/* {this.renderGTM()} */}
+
         </Head>
 
         <body>
