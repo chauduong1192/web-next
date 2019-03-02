@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import css from 'styled-jsx/css';
 
+import { connect } from 'react-redux';
+import { testRedux } from '@app/redux/test/actions';
+import { getTest } from '@app/redux/test/selectors';
+
 const styles = css`
   ul {
     @apply flex justify-between items-center p-8;
@@ -17,7 +21,9 @@ const styles = css`
   }
 `;
 
-const Nav = () => {
+const Nav = (props) => {
+  console.log('{props.test}', props.test);
+  
   return (
     <>
       <style jsx>{styles}</style>
@@ -25,8 +31,11 @@ const Nav = () => {
         <ul>
           <li>
             <Link prefetch href="/">
-              <a>Home</a>
+              <a onClick={() => props.testRedux(Math.random())}>test redux</a>
             </Link>
+          </li>
+          <li>
+            {props.test}
           </li>
         </ul>
       </nav>
@@ -34,4 +43,12 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+const mapStateToProps = state => ({
+  test: getTest(state),
+});
+
+const mapDispatchToProps = {
+  testRedux,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

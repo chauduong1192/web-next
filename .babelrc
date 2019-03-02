@@ -13,7 +13,9 @@
                 [
                     "module-resolver",
                     {
-                        "alias": {"@app": "./"}
+                        "alias": {
+                            "@app": "./"
+                        }
                     }
                 ],
                 "inline-dotenv",

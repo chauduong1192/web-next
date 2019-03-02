@@ -4,8 +4,10 @@ const styles = css.global`
   @tailwind preflight;
   @tailwind components;
 
+  @import "nprogress/nprogress";
+
   body {
-    @apply font-sans;
+    @apply font-mono;
   }
 `;
 
