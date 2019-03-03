@@ -22,8 +22,6 @@ const styles = css`
 `;
 
 const Nav = (props) => {
-  console.log('{props.test}', props.test);
-  
   return (
     <>
       <style jsx>{styles}</style>

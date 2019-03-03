@@ -14,7 +14,8 @@
     "lint-fix": "tslint -p . -c tslint.json --fix",
     "analyze": "BUNDLE_ANALYZE=both next build",
     "analyze:server": "BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build"
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
+    "now-build": "next build && tsc --project tsconfig.server.json"
   },
   "dependencies": {
     "@types/next": "^8.0.1",

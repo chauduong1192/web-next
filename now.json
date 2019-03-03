@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "name": "web-next",
+  "builds": [{
+    "src": "package.json",
+    "use": "@now/next"
+  }]
+}
