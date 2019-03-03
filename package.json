@@ -12,10 +12,9 @@
     "start": "NODE_ENV=production node .next/server/index.js",
     "lint": "tslint -p . -c tslint.json",
     "lint-fix": "tslint -p . -c tslint.json --fix",
-    "analyze": "BUNDLE_ANALYZE=both next build",
-    "analyze:server": "BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
-    "now-build": "next build && tsc --project tsconfig.server.json"
+    "analyze": "cross-env BUNDLE_ANALYZE=both next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@types/next": "^8.0.1",
@@ -27,6 +26,7 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.4",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "i18next": "^15.0.4",
