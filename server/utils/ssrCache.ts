@@ -2,7 +2,7 @@ import * as LRUCache from 'lru-cache';
 
 const enabled = process.env.SSR_CACHE_ENABLED || false;
 const max = +process.env.SSR_CACHE_MAX || 100;
-const maxAge = +process.env.SSR_CACHE_MAX_AGE || 1000 * 60 * 6; // 1 hour
+const maxAge = +process.env.SSR_CACHE_MAX_AGE || 1000 * 60 * 60; // 1 hour
 
 const ssrCache = new LRUCache({ max, maxAge });
 
