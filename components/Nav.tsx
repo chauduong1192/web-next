@@ -1,9 +1,12 @@
+import React, { useState } from 'react';
 import Link from 'next/link';
 import css from 'styled-jsx/css';
 
 import { connect } from 'react-redux';
 import { testRedux } from '@app/redux/test/actions';
 import { getTest } from '@app/redux/test/selectors';
+
+import { Button, ButtonGroup } from '@app/components/Common';
 
 const styles = css`
   ul {
@@ -22,6 +25,10 @@ const styles = css`
 `;
 
 const Nav = (props) => {
+  const [state, setState] = useState({
+    isBusy: false,
+    count: 0,
+  });
   return (
     <>
       <style jsx>{styles}</style>
@@ -36,6 +43,28 @@ const Nav = (props) => {
             {props.test}
           </li>
         </ul>
+        <ButtonGroup>
+          <Button
+            rounded
+            onClick={() =>
+            setState({
+              isBusy: true,
+              count: state.count + 1,
+            })}
+          >
+            {state.count} count
+          </Button>
+          <Button
+            rounded
+            onClick={() =>
+            setState({
+              isBusy: true,
+              count: state.count + 1,
+            })}
+          >
+            {state.count} count
+          </Button>
+        </ButtonGroup>
       </nav>
     </>
   );

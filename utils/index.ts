@@ -1,11 +1,15 @@
 const __NEXT_REDUX_STORE__ = '__NEXT_REDUX_STORE__';
 
-const isServer = () => Object.prototype.toString.call(global.process) === '[object process]';
-
 export interface ILocationProps {
   fullUrl: string;
   origin: string;
 }
+
+const isServer = () => Object.prototype.toString.call(global.process) === '[object process]';
+
+const concatClasses = (...args): string => {
+  return args.reduce((acc, className) => className ? `${acc} ${className}` : acc, '');
+};
 
 const getLocation = (req: any) => req && req ? {
   // https://stackoverflow.com/a/10185427
@@ -29,6 +33,7 @@ const getStoreBetweenPageTransitions = () => {
 };
 
 export {
+  concatClasses,
   isServer,
   getLocation,
   persistStoreBetweenPageTransitions,
