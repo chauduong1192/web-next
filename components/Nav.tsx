@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import { testRedux } from '@app/redux/test/actions';
 import { getTest } from '@app/redux/test/selectors';
 
-import { Button, ButtonGroup } from '@app/components/Common';
+import { Button, ButtonGroup, Alert, Dropdown, Spinner } from '@app/components/Common';
+
+const { DropdownTrigger, DropdownContent } = Dropdown;
 
 const styles = css`
   ul {
@@ -14,13 +16,6 @@ const styles = css`
   }
   li {
     @apply list-reset;
-  }
-  a {
-    @apply text-blue no-underline font-bold py-2 px-4
-    rounded bg-blue text-white;
-    :hover {
-      @apply bg-blue-dark;
-    }
   }
 `;
 
@@ -43,28 +38,92 @@ const Nav = (props) => {
             {props.test}
           </li>
         </ul>
-        <ButtonGroup>
-          <Button
-            rounded
-            onClick={() =>
+        <Button
+          color="primary"
+          rounded
+          onClick={() =>
             setState({
               isBusy: true,
               count: state.count + 1,
             })}
-          >
-            {state.count} count
+          isBusy={state.isBusy}
+        >
+          {state.count} count
           </Button>
-          <Button
-            rounded
-            onClick={() =>
-            setState({
-              isBusy: true,
-              count: state.count + 1,
-            })}
-          >
-            {state.count} count
-          </Button>
-        </ButtonGroup>
+
+        <Alert color="primary" solid>
+            <strong>Waring! </strong>
+          <span>Something seriously bad happened.</span>
+        </Alert>
+
+        <Dropdown>
+          <DropdownTrigger color="primary">
+            bottom
+          </DropdownTrigger>
+          <DropdownContent>
+            <div>
+              <Link href="/about">
+                <a>test redux</a>
+              </Link>
+             <div>2222</div>
+             <div>3333</div>
+             <div>4444</div>
+             <div>5555</div>
+            </div>
+          </DropdownContent>
+        </Dropdown>
+        <br />
+        <Dropdown direction="top">
+          <DropdownTrigger color="primary">
+            top
+          </DropdownTrigger>
+          <DropdownContent>
+            <div>
+              <Link href="/about">
+                <a>test redux</a>
+              </Link>
+             <div>2222</div>
+             <div>3333</div>
+             <div>4444</div>
+             <div>5555</div>
+            </div>
+          </DropdownContent>
+        </Dropdown>
+        <br />
+        <Dropdown direction="left">
+          <DropdownTrigger color="primary">
+           left
+          </DropdownTrigger>
+          <DropdownContent>
+            <div>
+              <Link href="/about">
+                <a>test redux</a>
+              </Link>
+             <div>2222</div>
+             <div>3333</div>
+             <div>4444</div>
+             <div>5555</div>
+            </div>
+          </DropdownContent>
+        </Dropdown>
+        <br/>
+        <Dropdown direction="right">
+          <DropdownTrigger color="primary">
+            right
+          </DropdownTrigger>
+          <DropdownContent>
+            <div>
+              <Link href="/about">
+                <a>test redux</a>
+              </Link>
+              <div>2222</div>
+              <div>3333</div>
+              <div>4444</div>
+              <div>5555</div>
+            </div>
+          </DropdownContent>
+        </Dropdown>
+        <Spinner />
       </nav>
     </>
   );

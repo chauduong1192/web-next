@@ -1,9 +1,13 @@
 import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup';
-import { Loading } from './Loading';
+import { Spinner } from './Spinner';
+import { Alert } from './Alert';
+import { Dropdown } from './Dropdown';
 
 export {
   Button,
   ButtonGroup,
-  Loading,
+  Spinner,
+  Alert,
+  Dropdown,
 };

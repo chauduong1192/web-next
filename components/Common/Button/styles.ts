@@ -1,8 +1,8 @@
 import css from 'styled-jsx/css';
 
 const styles = css`
-  .btn {
-    @apply py-2 px-4 text-center outline-none;
+  button {
+    @apply py-2 px-4 p-2 text-center outline-none;
 
     &[disabled], &.disabled {
       @apply cursor-not-allowed opacity-50;
@@ -31,7 +31,7 @@ const styles = css`
     }
   }
 
-  .btn-default {
+  .btn-base {
     @apply bg-grey-light text-grey-darkest;
 
     &:hover {
@@ -50,10 +50,6 @@ const styles = css`
         @apply bg-blue text-white border-transparent;
       }
     }
-  }
-
-  .btn-base {
-    @apply p-2;
   }
 
   .btn-sm {

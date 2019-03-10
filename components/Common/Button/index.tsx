@@ -1,25 +1,25 @@
 import * as React from 'react';
 
 import { IBasicComponentProps } from '@app/components/Types';
-import { Loading } from '../Loading';
+import { Spinner } from '../Spinner';
 
 import { concatClasses } from '@app/utils';
 
 import styles from './styles';
 
-interface IButtonProps extends IBasicComponentProps {
+export interface IButtonProps extends IBasicComponentProps {
   isBusy?: boolean;
   icon?: React.ReactNode;
-  type?: string;
+  color?: string;
   rounded?: boolean;
   size?: string;
   onClick?: (ev: any) => any;
   renderLoading?: (component: React.ReactNode) => React.ReactNode;
 }
 
-const getClassNames = ({ icon, className, type, rounded, size }) => {
+const getClassNames = ({ icon, className, color, rounded, size }) => {
   return concatClasses(
-    `btn btn-${type}`,
+    `btn-${color}`,
     className,
     icon && 'with-icon',
     rounded && 'rounded',
@@ -28,15 +28,15 @@ const getClassNames = ({ icon, className, type, rounded, size }) => {
 };
 
 const Button: React.SFC<IButtonProps> =
-  ({ children, className, icon, isBusy, type, rounded, size, renderLoading, ...rest }) =>
+  ({ children, className, icon, isBusy, color, rounded, size, renderLoading, ...rest }) =>
   <button
-    className={getClassNames({ icon, className, type, rounded, size })}
+    className={getClassNames({ icon, className, color, rounded, size })}
     {...rest}
     disabled={isBusy}>
 
     <style jsx>{styles}</style>
     {isBusy ?
-      renderLoading
+        <><span>Loading ...</span> <Spinner color={color === 'primary' ? 'white' : 'primary'} /></>
     :
       icon ?
       <>
@@ -49,10 +49,9 @@ const Button: React.SFC<IButtonProps> =
   </button>;
 
 Button.defaultProps = {
-  type: 'default',
+  color: 'base',
   rounded: false,
-  size: 'base',
-  renderLoading: () => <Loading />,
+  renderLoading: () => <Spinner />,
 };
 
 export { Button };
