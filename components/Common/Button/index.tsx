@@ -5,8 +5,6 @@ import { Spinner } from '../Spinner';
 
 import { concatClasses } from '@app/utils';
 
-import styles from './styles';
-
 export interface IButtonProps extends IBasicComponentProps {
   isBusy?: boolean;
   icon?: React.ReactNode;
@@ -34,7 +32,6 @@ const Button: React.SFC<IButtonProps> =
     {...rest}
     disabled={isBusy}>
 
-    <style jsx>{styles}</style>
     {isBusy ?
         <><span>Loading ...</span> <Spinner color={color === 'primary' ? 'white' : 'primary'} /></>
     :

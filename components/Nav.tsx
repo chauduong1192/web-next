@@ -1,23 +1,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import css from 'styled-jsx/css';
 
 import { connect } from 'react-redux';
 import { testRedux } from '@app/redux/test/actions';
 import { getTest } from '@app/redux/test/selectors';
 
-import { Button, ButtonGroup, Alert, Dropdown, Spinner } from '@app/components/Common';
+import { Button, Alert, Dropdown, Spinner } from '@app/components/Common';
 
 const { DropdownTrigger, DropdownContent } = Dropdown;
-
-const styles = css`
-  ul {
-    @apply flex justify-between items-center p-8;
-  }
-  li {
-    @apply list-reset;
-  }
-`;
 
 const Nav = (props) => {
   const [state, setState] = useState({
@@ -26,7 +16,6 @@ const Nav = (props) => {
   });
   return (
     <>
-      <style jsx>{styles}</style>
       <nav>
         <ul>
           <li>

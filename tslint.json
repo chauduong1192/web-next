@@ -7,8 +7,8 @@
         "exclude": [
             ".next/**/*.*",
             "next.config.js",
-            "tailwind.config.js",
-            "postcss.config.js",
+            // "tailwind.config.js",
+            // "postcss.config.js",
             "examples/**/*"
         ],
         "typeCheck": true

@@ -6,8 +6,6 @@ import { concatClasses } from '@app/utils';
 
 import { getAncestorByDataAttr } from '@app/utils/dom/attrs-selectors';
 
-import { dropdownStyle as styles } from './styles';
-
 import { DropdownTrigger } from './DropdownTrigger';
 import { DropdownContent } from './DropdownContent';
 
@@ -152,7 +150,6 @@ class Dropdown extends React.PureComponent<IDropdownProps, IDropdownStates> {
     return(
       <div className={getClassNames(this.props, this.state)}>
 
-        <style jsx>{styles}</style>
         {React.Children.map(this.props.children, this.renderChild)}
 
       </div>

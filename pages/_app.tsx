@@ -12,8 +12,6 @@ import configureStore from '@app/redux/store';
 
 import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@app/utils';
 
-import styles from './_style';
-
 const getOrInitReduxStore = (props) => {
   const { store } = props;
   if (store && store.dispatch) {
@@ -72,7 +70,6 @@ class MyApp extends App<any, any> {
     return (
       <Provider store={this.state.store}>
         <Container>
-          <style jsx global>{styles}</style>
           <Head />
           <Component {...pageProps} store={this.state.store} />
         </Container>

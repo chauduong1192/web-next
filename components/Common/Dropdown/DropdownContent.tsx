@@ -4,8 +4,6 @@ import { IBasicComponentProps } from '@app/components/Types';
 import { concatClasses } from '@app/utils';
 import { IDropdownProps } from './index';
 
-import { dropdownContentStyle as styles } from './styles';
-
 interface IDropdownContent extends IBasicComponentProps {
   direction?: IDropdownProps['direction'];
   triggerHeight?: number;
@@ -51,7 +49,6 @@ const DropdownContent: React.SFC<IDropdownContent> = (props) => {
       style={getStyles(props, dropdownContentRef)}
       ref={dropdownContentRef}
     >
-      <style jsx>{styles}</style>
       {props.children}
     </div>
   );
