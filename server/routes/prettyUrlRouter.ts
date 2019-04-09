@@ -20,12 +20,10 @@ const prettyUrlRouter = ({ app }) => {
   });
 
   route.get('/about', async (req, res) => {
-    // try {
-    //   await ssrCache(app, req, res, '/about', getGenericReqParams(req));
-    // } catch (err) {
-    //   app.renderError(err, req, res, '/about', getGenericReqParams(req));
-    // }
     return app.render(req, res, '/about', getGenericReqParams(req));
+  });
+  route.get('/components', async (req, res) => {
+    return app.render(req, res, '/components', getGenericReqParams(req));
   });
 
   return route;

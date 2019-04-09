@@ -222,7 +222,15 @@ class MyDocument extends Document<IMyDocumentProps> {
 
         <body>
           {/* {this.renderGTM(true)} */}
-
+          <style jsx>
+          {`
+            body {
+              margin: 0;
+              font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
+              Helvetica, sans-serif;
+            }
+          `}
+          </style>
           <Main />
 
           <NextScript />
