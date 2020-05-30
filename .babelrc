@@ -3,7 +3,6 @@
         "development": {
             "presets": [
                 ["next/babel"],
-                "@zeit/next-typescript/babel"
             ],
             "plugins": [
                 [
@@ -22,7 +21,6 @@
         "production": {
             "presets": [
                 ["next/babel"],
-                "@zeit/next-typescript/babel"
             ],
             "plugins": [
                 [

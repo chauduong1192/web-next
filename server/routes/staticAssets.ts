@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as path from 'path';
+import path from 'path';
 
 const STATIC_ASSETS_ROUTES = [
   '/service-worker.js',

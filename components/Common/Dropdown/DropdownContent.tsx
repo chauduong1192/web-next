@@ -16,7 +16,7 @@ const getClassNames = props => concatClasses(
   props.direction,
 );
 
-const getStyles = (props, dropdownContentRef) => {
+const getStyles = (props) => {
   const { triggerHeight, triggerWidth } = props;
   switch (props.direction) {
     case 'top':
@@ -46,7 +46,7 @@ const DropdownContent: React.SFC<IDropdownContent> = (props) => {
   return (
     <div
       className={getClassNames(props)}
-      style={getStyles(props, dropdownContentRef)}
+      style={getStyles(props)}
       ref={dropdownContentRef}
     >
       {props.children}

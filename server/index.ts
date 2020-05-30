@@ -1,9 +1,9 @@
 const dev = require('./utils').isDev();
 if (dev) { require('dotenv').config(); }
 
-import * as cookieParser from 'cookie-parser';
-import * as express from 'express';
-import * as next from 'next';
+import cookieParser from 'cookie-parser';
+import express from 'express';
+import next from 'next';
 
 import routes from './routes';
 

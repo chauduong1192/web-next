@@ -1,4 +1,4 @@
-import { $get, $post, $put, $delete } from './request';
+import { $get } from './request';
 
 const PATH = 'lists';
 

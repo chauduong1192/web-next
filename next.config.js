@@ -1,5 +1,4 @@
 const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require('next/constants');
-const withTypescript = require('@zeit/next-typescript');
 const { optional, withPlugins } = require('next-compose-plugins');
 const path = require('path');
 
@@ -40,7 +39,7 @@ const withOffline = [
   optional(() => require('next-offline')),
   {
     workboxOpts: {
-      swDest: 'static/service-worker.js',
+      swDest: 'public/static/service-worker.js',
       clientsClaim: true,
       skipWaiting: true,
       exclude: ['robots.txt'],
@@ -126,7 +125,7 @@ const withPwaManifest = [
   optional(() => toNextPlugin(require('webpack-pwa-manifest'), 'pwaManifestOps')),
   {
     pwaManifestOps: {
-      filename: 'static/manifest.json',
+      filename: 'public/static/manifest.json',
       inject: false,
       fingerprints: false,
       includeDirectory: true,
@@ -140,24 +139,24 @@ const withPwaManifest = [
       orientation: 'portrait',
       start_url: '/?utm_source=homescreen',
       icons: [{
-          src: path.resolve('./static/icons/icon.png'),
+          src: path.resolve('./public/static/icons/icon.png'),
           sizes: [57, 60, 72, 76, 114, 120, 144, 152, 180],
           type: 'image/png',
-          destination: 'static/icons',
+          destination: 'public/static/icons',
           ios: true
         },
         {
-          src: path.resolve('./static/icons/icon.png'),
+          src: path.resolve('./public/static/icons/icon.png'),
           size: 1024,
           type: 'image/png',
-          destination: 'static/icons',
+          destination: 'public/static/icons',
           ios: 'startup'
         },
         {
-          src: path.resolve('./static/icons/icon.png'),
+          src: path.resolve('./public/static/icons/icon.png'),
           sizes: [16, 32, 129, 192, 194, 512],
           type: 'image/png',
-          destination: 'static/icons'
+          destination: 'public/static/icons'
         },
       ],
     },
@@ -185,7 +184,7 @@ const withCopy = [
   optional(() => toNextPlugin(require('copy-webpack-plugin'), 'copyOpts')),
   {
     copyOpts: [{
-      from: './static/**/*',
+      from: './public/static/**/*',
       to: './'
     }, ],
   },
@@ -194,7 +193,6 @@ const withCopy = [
 
 // compose next plugins and config
 const nextPlugins = [
-  withTypescript,
   withBundleAnalyzer,
   withOffline,
   withPwaManifest,
