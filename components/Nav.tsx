@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const links = [
-  { href: '', label: 'Github' },
+  { href: '', label: 'Github', key: '' },
 ].map((link) => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;

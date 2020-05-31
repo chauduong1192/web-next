@@ -1,7 +1,7 @@
 /**
  * Most of the time components have these props
  */
-interface IBasicComponentProps {
+export interface IBasicComponentProps {
   // i18n fn, generally defaulted to identity function
   t?: (a: string, b?: any) => string;
   // classname string, usually added on parent
@@ -13,7 +13,7 @@ interface IBasicComponentProps {
 /**
  * Most of the time pages have these props
  */
-interface IBasicPageProps extends IBasicComponentProps {
+export interface IBasicPageProps extends IBasicComponentProps {
   asPath: string;
   user: any;
   req?: any;
@@ -24,8 +24,3 @@ interface IBasicPageProps extends IBasicComponentProps {
     subscribe: (cb: () => any) => any,
   };
 }
-
-export {
-  IBasicComponentProps,
-  IBasicPageProps,
-};

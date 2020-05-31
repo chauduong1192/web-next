@@ -1,26 +1,26 @@
 import NextHead from 'next/head';
-import getConfig from 'next/config';
+
+import { name, description, keywords } from '@app/utils/config';
 
 interface IHeadProps {
   title?: string;
-  description?: string;
-  keywords?: string;
+  desc?: string;
+  keyws?: string;
 }
 
-const { publicRuntimeConfig } = getConfig();
-const defaultTitle = publicRuntimeConfig.name;
-const defaultDescription = publicRuntimeConfig.description;
-const defaultKeywords = publicRuntimeConfig.keywords;
+const defaultTitle = name;
+const defaultDescription = description;
+const defaultKeywords = keywords;
 
 const Head = ({
   title = defaultTitle,
-  description = defaultDescription,
-  keywords = defaultKeywords,
+  desc = defaultDescription,
+  keyws = defaultKeywords,
 }: IHeadProps) => (
     <NextHead>
       <title key="title">{title}</title>
-      <meta name="description" content={description} key="description" />
-      {keywords && <meta name="keywords" content={keywords} key="keywords" />}
+      <meta name="description" content={desc} key="description" />
+      {keywords && <meta name="keywords" content={keyws} key="keywords" />}
 
       <meta property="og:title" content={title} key="og:title" />
       <meta property="og:description" content={description} key="og:desc" />

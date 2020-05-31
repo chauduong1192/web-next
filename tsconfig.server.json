@@ -7,5 +7,5 @@
     "isolatedModules": false,
     "noEmit": false
   },
-  "include": ["server/**/*", "i18nnext.ts"]
+  "include": ["server/**/*", "i18nnext.ts"],
 }

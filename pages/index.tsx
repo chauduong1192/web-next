@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from '@app/components/Head';
-import Nav from '@app/components/Nav';
+// import Nav from '@app/components/Nav';
 
 const Home = () => (
   <div>
     <Head title="Home" />
-    <Nav />
+    {/* <Nav /> */}
 
     <div className="hero">
       <h1 className="title">Welcome to web next</h1>

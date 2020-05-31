@@ -8,7 +8,11 @@ const publicRuntimeConfig = {
   keywords: 'react.js, next.js',
   themeColor: '#ffffff',
   backgroundColor: '#ffffff',
-  // gtmCode: ''
+  gtmCode: 'xxxxxxx'
+};
+
+const serverRuntimeConfig = {
+  isProd: process.env.NODE_ENV === 'production',
 };
 
 const toNextPlugin = (plugin, optKey) => (nextConfig = {}) => ({
@@ -125,7 +129,7 @@ const withPwaManifest = [
   optional(() => toNextPlugin(require('webpack-pwa-manifest'), 'pwaManifestOps')),
   {
     pwaManifestOps: {
-      filename: 'public/static/manifest.json',
+      filename: 'manifest.json',
       inject: false,
       fingerprints: false,
       includeDirectory: true,
@@ -201,6 +205,10 @@ const nextPlugins = [
 
 const nextConfig = {
   publicRuntimeConfig,
+  serverRuntimeConfig,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack(config) {
     // Fixes npm packages that depend on `fs` module
     config.node = {
