@@ -30,7 +30,7 @@ const style = css`
   }
 `;
 
-const Home = () => (
+const Component = () => (
   <div className="content">
     <style jsx>{style}</style>
     <Link href="/"><a>Back</a></Link>
@@ -78,4 +78,8 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+Component.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
+
+export default Component;
