@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { IBasicComponentProps } from '@app/components/Types';
+import { IBasicComponentProps } from '@components/Types';
 
-import { concatClasses } from '@app/utils';
+import { concatClasses } from '@utils';
 
-import { getAncestorByDataAttr } from '@app/utils/dom/attrs-selectors';
+import { getAncestorByDataAttr } from '@utils/dom/attrs-selectors';
 
 import { DropdownTrigger } from './DropdownTrigger';
 import { DropdownContent } from './DropdownContent';

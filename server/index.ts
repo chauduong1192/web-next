@@ -7,10 +7,11 @@ import next from 'next';
 
 import routes from './routes';
 
-const host = process.env.HOST || 'localhost';
-const port = +process.env.PORT || 3000;
-const cookieSecret = process.env.COOKIE_SECRET || 'mycookiesecret';
 const app = next({ dev });
+const host = process.env.HOST;
+const port = process.env.PORT;
+const cookieSecret = process.env.COOKIE_SECRET;
+const localCompression = process.env.LOCAL_COMPRESSION;
 
 app.prepare()
   .then(() => {
@@ -19,7 +20,7 @@ app.prepare()
     // set cookie
     server.use(cookieParser(cookieSecret));
 
-    if (process.env.LOCAL_COMPRESSION) {
+    if (localCompression) {
       const compression = require('compression');
       server.use(compression());
     }

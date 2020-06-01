@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 
-import { ILocationProps } from '@app/utils';
-import { name, themeColor, gtmCode, isProd } from '@app/utils/config';
+import { ILocationProps } from '@utils';
+import { name, themeColor, gtmCode, isProd } from '@utils/config';
 
-const ASSET_PATH = '_next/public/static';
+const ASSET_PATH = '_next/public';
 const getFullAssetPath = (assetPrefix: string = '') => `${assetPrefix}/${ASSET_PATH}`;
 
 interface IMyDocumentProps extends DocumentProps {

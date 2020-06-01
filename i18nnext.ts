@@ -4,6 +4,7 @@ const NextI18NextInstance = new NextI18Next({
   defaultLanguage: 'en',
   otherLanguages: ['vn'],
   serverLanguageDetection: false,
+  localePath: 'public/locales',
 });
 
 export default NextI18NextInstance;

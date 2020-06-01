@@ -2,7 +2,7 @@ import React from 'react';
 import css from 'styled-jsx/css';
 import Link from 'next/link';
 
-import { Button, Alert, Dropdown, Spinner } from '@app/components/Common';
+import { Button, Alert, Dropdown } from '@components/Common';
 const { DropdownTrigger, DropdownContent } = Dropdown;
 
 const style = css`

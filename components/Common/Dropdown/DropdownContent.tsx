@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
-import { IBasicComponentProps } from '@app/components/Types';
-import { concatClasses } from '@app/utils';
+import { IBasicComponentProps } from '@components/Types';
+import { concatClasses } from '@utils';
 import { IDropdownProps } from './index';
 
 interface IDropdownContent extends IBasicComponentProps {

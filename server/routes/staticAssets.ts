@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import path from 'path';
 
-const iconRegex = /\/_next\/public\/static\/icons\/.{1,}\.(ico|png|jpg|svg)/;
+const iconRegex = /\/_next\/public\/icons\/.{1,}\.(ico|png|jpg|svg)/;
 const STATIC_ASSETS_ROUTES = [
   '/service-worker.js',
   '/robots.txt',
@@ -15,10 +15,10 @@ const routes = () => {
     const originalUrl = req.originalUrl;
     const isIcon = iconRegex.test(originalUrl);
     const isManifest = ['/manifest.json'].includes(originalUrl);
-    const lastPath = isIcon ? req.path.replace('/_next/public/static', '') : req.path;
+    const lastPath = isIcon ? req.path.replace('/_next/public', '') : req.path;
     const filePath = path.join(
       __dirname,
-      !isManifest ? '../../public/static' : '../../',
+      !isManifest ? '../../public' : '../../',
       lastPath,
     );
 

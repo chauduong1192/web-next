@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Head from '@app/components/Head';
-// import Nav from '@app/components/Nav';
+import Head from '@components/Head';
 
 const Home = () => (
   <div>

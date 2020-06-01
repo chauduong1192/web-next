@@ -2,6 +2,8 @@ import getConfig from 'next/config';
 
 export const {
   isProd,
+  apiKey,
+  apiUrl,
 } = getConfig().serverRuntimeConfig;
 
 export const {

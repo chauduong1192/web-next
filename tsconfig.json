@@ -13,11 +13,17 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@app/*": [
-        "./*"
-      ]
+      "@app/*": ["*"],
+      "@api/*": ["api/*"],
+      "@components/*": ["components/*"],
+      "@redux/*": ["redux/*"],
+      "@utils": ["utils/index"],
+      "@utils/*": ["utils/*"],
+      "@static/*": ["public/*"],
+      "@pages/*": ["pages/*"],
+      "@i18nnext": ["i18nnext"],
     },
     "lib": [
       "dom",
