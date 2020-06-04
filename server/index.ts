@@ -8,8 +8,8 @@ import next from 'next';
 import routes from './routes';
 
 const app = next({ dev });
-const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || 3000;
+const host = process.env.HOST;
+const port = process.env.PORT;
 const cookieSecret = process.env.COOKIE_SECRET;
 const localCompression = process.env.LOCAL_COMPRESSION;
 

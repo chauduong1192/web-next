@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "NODE_ENV=development ts-node --project tsconfig.server.json server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "NODE_ENV=production node .next/server/index.js",
+    "start": "NODE_ENV=production node .next/server/index.js -p $PORT",
     "lint": "tslint -p . -c tslint.json",
     "lint-fix": "tslint -p . -c tslint.json --fix",
     "analyze": "cross-env BUNDLE_ANALYZE=both next build",
