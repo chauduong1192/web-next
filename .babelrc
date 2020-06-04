@@ -3,17 +3,8 @@
         "development": {
             "presets": [
                 ["next/babel"],
-                "@zeit/next-typescript/babel"
             ],
             "plugins": [
-                [
-                    "module-resolver",
-                    {
-                        "alias": {
-                            "@app": "./"
-                        }
-                    }
-                ],
                 "inline-dotenv",
                 "transform-inline-environment-variables",
                 "inline-react-svg"
@@ -22,17 +13,8 @@
         "production": {
             "presets": [
                 ["next/babel"],
-                "@zeit/next-typescript/babel"
             ],
             "plugins": [
-                [
-                    "module-resolver",
-                    {
-                        "alias": {
-                            "@app": "./"
-                        }
-                    }
-                ],
                 "inline-dotenv",
                 "transform-inline-environment-variables",
                 "inline-react-svg"

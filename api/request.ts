@@ -1,8 +1,7 @@
 import * as fetch from 'isomorphic-fetch';
+import { apiUrl } from '@utils/config';
 
-const HOST = process.env.API_TURN_ON && process.env.API_SERVICE_HOST ?
-`http://${process.env.WWW_API_SERVICE_HOST}` : 'http://localhost:8000';
-
+const HOST = apiUrl ? `http://${apiUrl}` : 'http://localhost:8000';
 const BASE_URL = `${HOST}/api/v2`;
 
 const request: any = async (uri: string, method: string, body?: any, cookie?: any) => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { withNamespaces } from '@app/i18nnext';
+import { withTranslation } from '@i18nnext';
 
 const Footer = (props) => {
   const [count, setCount] = useState(0);
@@ -15,4 +15,4 @@ const Footer = (props) => {
   );
 };
 
-export default withNamespaces('footer')(Footer);
+export default withTranslation('footer')(Footer);

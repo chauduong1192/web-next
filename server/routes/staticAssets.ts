@@ -1,20 +1,28 @@
 import { Router } from 'express';
-import * as path from 'path';
+import path from 'path';
 
+const iconRegex = /\/_next\/public\/icons\/.{1,}\.(ico|png|jpg|svg)/;
 const STATIC_ASSETS_ROUTES = [
   '/service-worker.js',
   '/robots.txt',
+  '/manifest.json',
+  iconRegex,
 ];
 
-const routes = ({ dev }) => {
+const routes = () => {
   const router = Router();
   const handler = (req, res) => {
+    const originalUrl = req.originalUrl;
+    const isIcon = iconRegex.test(originalUrl);
+    const isManifest = ['/manifest.json'].includes(originalUrl);
+    const lastPath = isIcon ? req.path.replace('/_next/public', '') : req.path;
     const filePath = path.join(
       __dirname,
-      dev ? '../../.next/static' : '../../static',
-      req.path,
+      !isManifest ? '../../public' : '../../',
+      lastPath,
     );
 
+    res.set('cache-control', 'max-age=86400, public');
     res.status(200).sendFile(filePath);
   };
 

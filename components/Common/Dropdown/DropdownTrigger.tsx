@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { IBasicComponentProps } from '@app/components/Types';
+import { IBasicComponentProps } from '@components/Types';
 import { Button, IButtonProps } from '../Button';
 
 interface IDropdownTriggerProps extends IButtonProps, IBasicComponentProps {}

@@ -38,7 +38,7 @@ const configureGlobalSCSSEntries = (config, {
 
   config.plugins.push(
     new MiniCssExtractPlugin({
-      filename: "static/styles/[name]"
+      filename: "public/styles/[name]"
     })
   );
 

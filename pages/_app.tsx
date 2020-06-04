@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { appWithTranslation } from '@app/i18nnext';
-import App, { Container } from 'next/app';
+import { appWithTranslation } from '@i18nnext';
+import App from 'next/app';
 import Router from 'next/router';
 
-import Head from '@app/components/Head';
+import Head from '@components/Head';
 import NProgress from 'nprogress';
 
 import { Provider } from 'react-redux';
-import configureStore from '@app/redux/store';
+import configureStore from '@redux/store';
 
-import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@app/utils';
+import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@utils';
 
 const getOrInitReduxStore = (props) => {
   const { store } = props;
@@ -69,10 +69,8 @@ class MyApp extends App<any, any> {
     const { Component, pageProps } = this.props;
     return (
       <Provider store={this.state.store}>
-        <Container>
           <Head />
           <Component {...pageProps} store={this.state.store} />
-        </Container>
       </Provider>
     );
   }

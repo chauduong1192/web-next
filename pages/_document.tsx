@@ -1,13 +1,11 @@
 import { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
-import getConfig from 'next/config';
 
-import { ILocationProps } from '@app/utils';
+import { ILocationProps } from '@utils';
+import { name, themeColor, gtmCode, isProd } from '@utils/config';
 
-const ASSET_PATH = '_next/static';
+const ASSET_PATH = '_next/public';
 const getFullAssetPath = (assetPrefix: string = '') => `${assetPrefix}/${ASSET_PATH}`;
-
-const { publicRuntimeConfig } = getConfig();
 
 interface IMyDocumentProps extends DocumentProps {
   location: ILocationProps;
@@ -30,33 +28,31 @@ class MyDocument extends Document<IMyDocumentProps> {
     const fullAssetPath = getFullAssetPath(assetPrefix || location.origin);
 
     return <Fragment>
-      <meta property="og:site_name" content={publicRuntimeConfig.name} />
+      <meta property="og:site_name" content={name} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${fullAssetPath}/images/logo.png`} />
+      <meta property="og:image" content={`${fullAssetPath}/icons/icon.png`} />
       <meta property="og:url" content={location.fullUrl} />
     </Fragment>;
   }
 
   // https://github.com/gokulkrishh/awesome-meta-and-manifest
   public renderPwaTags() {
-    const { dev, assetPrefix } = this.props;
-    const fullAssetPath = getFullAssetPath(assetPrefix);
 
     return <Fragment>
       {/* PWA Manifest */}
-      {!dev && <link rel="manifest" href={`${fullAssetPath}/manifest.json`} />}
+      {isProd && <link rel="manifest" href="manifest.json" />}
 
       {/* iOS */}
-      <meta name="apple-mobile-web-app-title" content={publicRuntimeConfig.name} />
+      <meta name="apple-mobile-web-app-title" content={name} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
       {/* Android */}
-      <meta name="theme-color" content={publicRuntimeConfig.themeColor} />
+      <meta name="theme-color" content={themeColor} />
       <meta name="mobile-web-app-capable" content="yes" />
 
       {/* Pinned Sites */}
-      <meta name="application-name" content={publicRuntimeConfig.name} />
+      <meta name="application-name" content={name} />
 
       {/* UC Mobile Browser */}
       <meta name="full-screen" content="yes" />
@@ -71,17 +67,16 @@ class MyDocument extends Document<IMyDocumentProps> {
 
   // https://github.com/gokulkrishh/awesome-meta-and-manifest#link-tags
   public renderIconTags() {
-    const { dev, assetPrefix } = this.props;
+
+    const { assetPrefix } = this.props;
     const fullAssetPath = getFullAssetPath(assetPrefix);
 
-    if (dev) {
-      return <link
+    return <Fragment>
+      <link
         rel="shortcut icon"
         href={`${fullAssetPath}/icons/favicon.ico`}
-      />;
-    }
+      />
 
-    return <Fragment>
       {/* Main Link Tags */}
       <link
         rel="icon"
@@ -169,9 +164,8 @@ class MyDocument extends Document<IMyDocumentProps> {
   }
 
   public renderGTM(noscript: boolean = false) {
-    const { dev } = this.props;
 
-    if (dev) {
+    if (!isProd) {
       return null;
     }
 
@@ -187,7 +181,7 @@ class MyDocument extends Document<IMyDocumentProps> {
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','${publicRuntimeConfig.gtmCode}');`,
+      })(window,document,'script','dataLayer','${gtmCode}');`,
     }}></script>;
   }
 

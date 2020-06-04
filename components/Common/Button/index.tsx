@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { IBasicComponentProps } from '@app/components/Types';
-import { Spinner } from '../Spinner';
+import { IBasicComponentProps } from '@components/Types';
+import { Spinner } from '@components/Common/Spinner';
 
-import { concatClasses } from '@app/utils';
+import { concatClasses } from '@utils';
 
 export interface IButtonProps extends IBasicComponentProps {
   isBusy?: boolean;

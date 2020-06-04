@@ -2,7 +2,7 @@ import React from 'react';
 import css from 'styled-jsx/css';
 import Link from 'next/link';
 
-import { Button, Alert, Dropdown, Spinner } from '@app/components/Common';
+import { Button, Alert, Dropdown } from '@components/Common';
 const { DropdownTrigger, DropdownContent } = Dropdown;
 
 const style = css`
@@ -30,7 +30,7 @@ const style = css`
   }
 `;
 
-const Home = () => (
+const Component = () => (
   <div className="content">
     <style jsx>{style}</style>
     <Link href="/"><a>Back</a></Link>
@@ -78,4 +78,8 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+Component.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+});
+
+export default Component;

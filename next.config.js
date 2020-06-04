@@ -1,15 +1,20 @@
 const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require('next/constants');
-const withTypescript = require('@zeit/next-typescript');
 const { optional, withPlugins } = require('next-compose-plugins');
 const path = require('path');
 
 const publicRuntimeConfig = {
-  name: 'base',
-  description: 'Base Web App Project',
+  name: 'web-next',
+  description: 'The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..',
   keywords: 'react.js, next.js',
   themeColor: '#ffffff',
   backgroundColor: '#ffffff',
-  // gtmCode: ''
+  gtmCode: 'xxxxxxx'
+};
+
+const serverRuntimeConfig = {
+  isProd: process.env.NODE_ENV === 'production',
+  apiKey: process.env.API_KEY,
+  apiUrl: process.env.API_URL,
 };
 
 const toNextPlugin = (plugin, optKey) => (nextConfig = {}) => ({
@@ -40,7 +45,7 @@ const withOffline = [
   optional(() => require('next-offline')),
   {
     workboxOpts: {
-      swDest: 'static/service-worker.js',
+      swDest: 'public/service-worker.js',
       clientsClaim: true,
       skipWaiting: true,
       exclude: ['robots.txt'],
@@ -126,7 +131,7 @@ const withPwaManifest = [
   optional(() => toNextPlugin(require('webpack-pwa-manifest'), 'pwaManifestOps')),
   {
     pwaManifestOps: {
-      filename: 'static/manifest.json',
+      filename: 'manifest.json',
       inject: false,
       fingerprints: false,
       includeDirectory: true,
@@ -140,24 +145,24 @@ const withPwaManifest = [
       orientation: 'portrait',
       start_url: '/?utm_source=homescreen',
       icons: [{
-          src: path.resolve('./static/icons/icon.png'),
+          src: path.resolve('./public/icons/icon.png'),
           sizes: [57, 60, 72, 76, 114, 120, 144, 152, 180],
           type: 'image/png',
-          destination: 'static/icons',
+          destination: 'public/icons',
           ios: true
         },
         {
-          src: path.resolve('./static/icons/icon.png'),
+          src: path.resolve('./public/icons/icon.png'),
           size: 1024,
           type: 'image/png',
-          destination: 'static/icons',
+          destination: 'public/icons',
           ios: 'startup'
         },
         {
-          src: path.resolve('./static/icons/icon.png'),
+          src: path.resolve('./public/icons/icon.png'),
           sizes: [16, 32, 129, 192, 194, 512],
           type: 'image/png',
-          destination: 'static/icons'
+          destination: 'public/icons'
         },
       ],
     },
@@ -185,7 +190,7 @@ const withCopy = [
   optional(() => toNextPlugin(require('copy-webpack-plugin'), 'copyOpts')),
   {
     copyOpts: [{
-      from: './static/**/*',
+      from: './public/**/*',
       to: './'
     }, ],
   },
@@ -194,7 +199,6 @@ const withCopy = [
 
 // compose next plugins and config
 const nextPlugins = [
-  withTypescript,
   withBundleAnalyzer,
   withOffline,
   withPwaManifest,
@@ -203,6 +207,11 @@ const nextPlugins = [
 
 const nextConfig = {
   publicRuntimeConfig,
+  serverRuntimeConfig,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  compress: true,
   webpack(config) {
     // Fixes npm packages that depend on `fs` module
     config.node = {

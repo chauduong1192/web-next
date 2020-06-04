@@ -1,4 +1,4 @@
-import * as LRUCache from 'lru-cache';
+import LRUCache from 'lru-cache';
 
 const enabled = process.env.SSR_CACHE_ENABLED || false;
 const max = +process.env.SSR_CACHE_MAX || 100;

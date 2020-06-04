@@ -1,27 +1,21 @@
 import { Router } from 'express';
-import * as next from 'next';
-import * as nextI18NextMiddleware from 'next-i18next/middleware';
+import nextI18NextMiddleware from 'next-i18next/middleware';
 
-const nextI18next = require('./../../i18nnext');
+import nextI18next from '../../i18nnext';
 import prettyUrlRouter from './prettyUrlRouter';
 import staticAssets from './staticAssets';
 import wildCard from './wildcard';
 
 const assetPrefix = process.env.ASSET_PREFIX;
 
-interface IRoutesProps {
-  app: next.Server;
-  dev: boolean;
-}
-
-const routes = (props: IRoutesProps) => {
+const routes = (props) => {
   const router = Router();
 
   // for change asset prefix(cdn,..)
   if (assetPrefix) {
     props.app.setAssetPrefix(assetPrefix);
   } else {
-    router.use(staticAssets(props));
+    router.use(staticAssets());
   }
 
   // handle i18n translation
@@ -37,6 +31,3 @@ const routes = (props: IRoutesProps) => {
 };
 
 export default routes;
-export {
-  IRoutesProps,
-};
