@@ -1,5 +1,5 @@
-const Custom404 = () => {
+const Error404 = () => {
   return <h1>404 - Page Not Found</h1>;
 };
 
-export default Custom404;
+export default Error404;
