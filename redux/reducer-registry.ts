@@ -7,23 +7,23 @@ class ReducerRegistry {
   private emitChange = null;
   private reducers = {};
 
-  public getReducers() {
+  getReducers() {
     return { ...this.reducers };
   }
 
-  public register(name, reducer) {
+  register(name, reducer) {
     this.reducers = { ...this.reducers, [name]: reducer };
     if (this.emitChange) {
       this.emitChange(this.getReducers());
     }
   }
 
-  public setChangeListener(listener) {
+  setChangeListener(listener) {
     this.emitChange = listener;
   }
 
   // Preserve initial state for not-yet-loaded reducers
-  public getCombinedReducers(initialState = {}) {
+  getCombinedReducers(initialState = {}) {
     const reducers = this.getReducers();
     const reducerNames = Object.keys(reducers);
     Object.keys(initialState).forEach((item) => {

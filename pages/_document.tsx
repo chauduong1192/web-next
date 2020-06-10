@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 
-import { ILocationProps } from '@utils';
-import { name, themeColor, gtmCode, isProd, websiteUrl } from '@utils/config';
+import { ILocationProps } from 'utils';
+import { name, themeColor, gtmCode, isProd, websiteUrl } from 'utils/config';
 
 const ASSET_PATH = '_next/public';
 const getFullAssetPath = (assetPrefix: string = '') => `${assetPrefix}/${ASSET_PATH}`;
@@ -12,7 +12,7 @@ interface IMyDocumentProps extends DocumentProps {
 }
 
 class MyDocument extends Document<IMyDocumentProps> {
-  public static getInitialProps = async (ctx) => {
+  static getInitialProps = async (ctx) => {
     const initialProps = await Document.getInitialProps(ctx);
 
     return {
@@ -22,8 +22,8 @@ class MyDocument extends Document<IMyDocumentProps> {
   }
 
   // https://github.com/joshbuchea/HEAD#facebook-open-graph
-  // Check og:title, og:description tags in @app/components/Head component
-  public renderOGTags() {
+  // Check og:title, og:description tags in @app/components/head component
+  renderOGTags() {
     const { assetPrefix } = this.props;
     const fullAssetPath = getFullAssetPath(assetPrefix);
 
@@ -36,7 +36,7 @@ class MyDocument extends Document<IMyDocumentProps> {
   }
 
   // https://github.com/gokulkrishh/awesome-meta-and-manifest
-  public renderPwaTags() {
+  renderPwaTags() {
 
     return <Fragment>
       {/* PWA Manifest */}
@@ -66,7 +66,7 @@ class MyDocument extends Document<IMyDocumentProps> {
   }
 
   // https://github.com/gokulkrishh/awesome-meta-and-manifest#link-tags
-  public renderIconTags() {
+  renderIconTags() {
 
     const { assetPrefix } = this.props;
     const fullAssetPath = getFullAssetPath(assetPrefix);
@@ -152,7 +152,7 @@ class MyDocument extends Document<IMyDocumentProps> {
     </Fragment>;
   }
 
-  public renderOtherTags() {
+  renderOtherTags() {
     return <Fragment>
       <link rel="canonical" href={websiteUrl} />
       <meta name="HandheldFriendly" content="True" />
@@ -161,7 +161,7 @@ class MyDocument extends Document<IMyDocumentProps> {
     </Fragment>;
   }
 
-  public renderGTM(noscript: boolean = false) {
+  renderGTM(noscript: boolean = false) {
 
     if (!isProd) {
       return null;
@@ -183,7 +183,7 @@ class MyDocument extends Document<IMyDocumentProps> {
     }}></script>;
   }
 
-  public render() {
+  render() {
     const { __NEXT_DATA__: { props } } = this.props;
     return (
       <html lang={props.initialLanguage}>

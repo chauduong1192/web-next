@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { appWithTranslation } from '@i18nnext';
+import { appWithTranslation } from 'i18nnext';
 import App from 'next/app';
 import Router from 'next/router';
 
-import Head from '@components/Head';
+import Head from 'components/Head';
 import NProgress from 'nprogress';
 
 import { Provider } from 'react-redux';
-import configureStore from '@redux/store';
+import configureStore from 'redux/store';
 
-import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@utils';
+import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from 'utils';
 
-import '@static/styles/index.css';
+import 'public/styles/index.css';
 
 const getOrInitReduxStore = (props) => {
   const { store } = props;
@@ -34,7 +34,7 @@ const hookIntoRouterCallbacks = () => {
 };
 
 class MyApp extends App<any, any> {
-  public static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
     const store = isServer() ? configureStore() : getStoreBetweenPageTransitions();
     let storeRequiredData;
@@ -59,17 +59,17 @@ class MyApp extends App<any, any> {
     };
 
   }
-  public state = {
+  state = {
     store: getOrInitReduxStore(this.props),
   };
 
-  public componentDidMount() {
+  componentDidMount() {
     // handle ngpress
     hookIntoRouterCallbacks();
 
     persistStoreBetweenPageTransitions(this.state.store);
   }
-  public render() {
+  render() {
     const { Component, pageProps } = this.props;
     return (
       <Provider store={this.state.store}>

@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-import { IBasicComponentProps } from '@components/Types';
-import { Spinner } from '@components/Common/Spinner';
+import { IBasicComponentProps } from 'components/Types';
 
-import { concatClasses } from '@utils';
+import { concatClasses } from 'utils';
 
 export interface IButtonProps extends IBasicComponentProps {
   isBusy?: boolean;
@@ -25,15 +24,15 @@ const getClassNames = ({ icon, className, color, rounded, size }) => {
   );
 };
 
-const Button: React.SFC<IButtonProps> =
-  ({ children, className, icon, isBusy, color, rounded, size, renderLoading, ...rest }) =>
+const Button =
+  ({ children, className, icon, isBusy, color, rounded, size, renderLoading, ...rest }: IButtonProps) =>
   <button
     className={getClassNames({ icon, className, color, rounded, size })}
     {...rest}
     disabled={isBusy}>
 
     {isBusy ?
-        <><span>Loading ...</span> <Spinner color={color === 'primary' ? 'white' : 'primary'} /></>
+        <><span>Loading ...</span></>
     :
       icon ?
       <>
@@ -48,7 +47,6 @@ const Button: React.SFC<IButtonProps> =
 Button.defaultProps = {
   color: 'base',
   rounded: false,
-  renderLoading: () => <Spinner />,
 };
 
 export { Button };

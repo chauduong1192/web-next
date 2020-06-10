@@ -14,17 +14,6 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@app/*": ["*"],
-      "@api/*": ["api/*"],
-      "@components/*": ["components/*"],
-      "@redux/*": ["redux/*"],
-      "@utils": ["utils/index"],
-      "@utils/*": ["utils/*"],
-      "@static/*": ["public/*"],
-      "@pages/*": ["pages/*"],
-      "@i18nnext": ["i18nnext"],
-    },
     "lib": [
       "dom",
       "es2017"
@@ -34,7 +23,10 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+  },
+  "rules": {
+    "member-access": false,
   },
   "exclude": [
     "node_modules",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { withTranslation } from '@i18nnext';
+import { withTranslation } from 'i18nnext';
 
 const Footer = (props) => {
   const [count, setCount] = useState(0);
