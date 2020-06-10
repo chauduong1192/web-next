@@ -12,4 +12,5 @@ export const {
   keywords,
   themeColor,
   gtmCode,
+  websiteUrl,
 } = getConfig().publicRuntimeConfig;

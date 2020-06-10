@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 
 import { ILocationProps } from '@utils';
-import { name, themeColor, gtmCode, isProd } from '@utils/config';
+import { name, themeColor, gtmCode, isProd, websiteUrl } from '@utils/config';
 
 const ASSET_PATH = '_next/public';
 const getFullAssetPath = (assetPrefix: string = '') => `${assetPrefix}/${ASSET_PATH}`;
@@ -24,14 +24,14 @@ class MyDocument extends Document<IMyDocumentProps> {
   // https://github.com/joshbuchea/HEAD#facebook-open-graph
   // Check og:title, og:description tags in @app/components/Head component
   public renderOGTags() {
-    const { assetPrefix, location } = this.props;
-    const fullAssetPath = getFullAssetPath(assetPrefix || location.origin);
+    const { assetPrefix } = this.props;
+    const fullAssetPath = getFullAssetPath(assetPrefix);
 
     return <Fragment>
       <meta property="og:site_name" content={name} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${fullAssetPath}/icons/icon.png`} />
-      <meta property="og:url" content={location.fullUrl} />
+      <meta property="og:url" content={websiteUrl} />
     </Fragment>;
   }
 
@@ -153,10 +153,8 @@ class MyDocument extends Document<IMyDocumentProps> {
   }
 
   public renderOtherTags() {
-    const { location } = this.props;
-
     return <Fragment>
-      <link rel="canonical" href={location.fullUrl} />
+      <link rel="canonical" href={websiteUrl} />
       <meta name="HandheldFriendly" content="True" />
       <meta name="google" content="notranslate" />
       <meta name="format-detection" content="telephone=no" />
@@ -198,7 +196,7 @@ class MyDocument extends Document<IMyDocumentProps> {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
           {/* OG */}
-          {/* {this.renderOGTags()} */}
+          {this.renderOGTags()}
 
           {/* iOS & Android */}
           {this.renderPwaTags()}
@@ -207,24 +205,15 @@ class MyDocument extends Document<IMyDocumentProps> {
           {this.renderIconTags()}
 
           {/* Other Tags */}
-          {/* {this.renderOtherTags()} */}
+          {this.renderOtherTags()}
 
           {/* GTM */}
-          {/* {this.renderGTM()} */}
+          {this.renderGTM()}
 
         </Head>
 
         <body>
           {/* {this.renderGTM(true)} */}
-          <style jsx>
-          {`
-            body {
-              margin: 0;
-              font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-              Helvetica, sans-serif;
-            }
-          `}
-          </style>
           <Main />
 
           <NextScript />

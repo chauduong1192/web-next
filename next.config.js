@@ -8,7 +8,8 @@ const publicRuntimeConfig = {
   keywords: 'react.js, next.js',
   themeColor: '#ffffff',
   backgroundColor: '#ffffff',
-  gtmCode: 'xxxxxxx'
+  gtmCode: 'xxxxxxx',
+  websiteUrl: 'https://web-next.com',
 };
 
 const serverRuntimeConfig = {
