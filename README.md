@@ -4,7 +4,7 @@ The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..
 
 ## Links
 
-- [Link Demo](https://comming-soon.com)
+- [Link Demo](https://web-next.herokuapp.com/)
 - [Issue project board](https://trello.com/b/loEbAQ1g/web-next)
 
 ## Folder Structure
