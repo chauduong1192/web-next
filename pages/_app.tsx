@@ -12,6 +12,8 @@ import configureStore from '@redux/store';
 
 import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@utils';
 
+import '@static/styles/index.css';
+
 const getOrInitReduxStore = (props) => {
   const { store } = props;
   if (store && store.dispatch) {
@@ -22,11 +24,13 @@ const getOrInitReduxStore = (props) => {
 };
 
 const hookIntoRouterCallbacks = () => {
-  Router.onRouteChangeStart = () => {
+  Router.events.on('routeChangeStart', (url) => {
+    // tslint:disable-next-line:no-console
+    console.log(`Loading: ${url}`);
     NProgress.start();
-  };
-  Router.onRouteChangeComplete = () => NProgress.done();
-  Router.onRouteChangeError = () => NProgress.done();
+  });
+  Router.events.on('routeChangeComplete', () => NProgress.done());
+  Router.events.on('routeChangeError', () => NProgress.done());
 };
 
 class MyApp extends App<any, any> {
