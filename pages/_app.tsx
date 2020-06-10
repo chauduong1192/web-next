@@ -12,6 +12,8 @@ import configureStore from '@redux/store';
 
 import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@utils';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const getOrInitReduxStore = (props) => {
   const { store } = props;
   if (store && store.dispatch) {

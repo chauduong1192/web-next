@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from '@components/Head';
+import { Button } from 'reactstrap';
 
 const Home = () => (
   <div>
     <Head title="Home" />
     {/* <Nav /> */}
-
+    <Button color="primary">primary</Button>
     <div className="hero">
       <h1 className="title">Welcome to web next</h1>
       <p className="description">
