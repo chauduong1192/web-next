@@ -1,5 +1,10 @@
 <div align="center">
-  <!-- Build Status -->
+  <a href="https://codeclimate.com/github/chauduong1192/web-next/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/f84fe0e7cf5adaf536a5/maintainability" />
+  </a>
+  <a href="https://codeclimate.com/github/chauduong1192/web-next/test_coverage">
+    <img src="https://api.codeclimate.com/v1/badges/f84fe0e7cf5adaf536a5/test_coverage" />
+  </a>
   <a href="https://github.com/chauduong1192/web-next/runs/765177210?check_suite_focus=true">
     <img src="https://github.com/chauduong1192/web-next/workflows/CI/badge.svg" alt="Build Status" />
   </a>
