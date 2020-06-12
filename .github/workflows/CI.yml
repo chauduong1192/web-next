@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install Node JS
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    # Run yarn install
+    - name: yarn install
+      run: |
+        yarn install
+
+    # Run yarn lint
+    - name: yarn lint
+      run: |
+        yarn lint
+
+    # Run yarn build
+    - name: yarn build
+      run: |
+        yarn run build --if-present
