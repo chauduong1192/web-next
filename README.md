@@ -1,3 +1,10 @@
+<div align="center">
+  <!-- Build Status -->
+  <a href="https://github.com/chauduong1192/web-next/runs/765177210?check_suite_focus=true">
+    <img src="https://github.com/chauduong1192/web-next/workflows/CI/badge.svg" alt="Build Status" />
+  </a>
+</div>
+
 # web-next
 
 The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..
