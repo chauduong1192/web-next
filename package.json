@@ -68,11 +68,6 @@
     "typescript": "^3.9.5",
     "webpack-pwa-manifest": "^4.0.0"
   },
-  "resolutions": {
-    "@babel/core": "^7.3.3",
-    "styled-jsx": "^3.0.0",
-    "webpack": "^4.28.2"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
