@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 
 import { ILocationProps } from 'utils';
