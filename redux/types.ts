@@ -1,5 +1,5 @@
 export interface IGenericStoreAction {
-  type: string;
+  type?: string;
   payload?: any;
   error?: any;
 }

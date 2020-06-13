@@ -1,8 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
@@ -14,23 +12,38 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "paths": {
+      "@app/*": [
+        "*"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ]
+    },
     "lib": [
-      "dom",
-      "es2017"
+      "es2018"
     ],
+    "module": "esnext",
+    "target": "es2018",
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "rules": {
-    "member-access": false,
+    "member-access": false
   },
   "exclude": [
     "node_modules",
     ".next",
-    "coverage"
+    "coverage",
+    "templates"
   ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

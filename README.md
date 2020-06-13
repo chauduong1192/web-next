@@ -1,3 +1,5 @@
+# Web-next
+
 <div align="center">
   <a href="https://codeclimate.com/github/chauduong1192/web-next/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/f84fe0e7cf5adaf536a5/maintainability" />
@@ -16,8 +18,6 @@
   </a>
 </div>
 
-# web-next
-
 The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..
 
 ## Links
@@ -32,6 +32,8 @@ Our source is created by CNA, after createing it should look something like:
 ```
 ├── node_modules
     ├── [...]
+├── __tests__
+├── .github
 ├── apis
 ├── components
     ├── Common
@@ -51,6 +53,10 @@ Our source is created by CNA, after createing it should look something like:
     └── images
     └── locales
     └── styles
+├── templates
+    └── components
+    └── redux
+    └── storybook
 └── yarn.lock
 ├── README.md
 ```
@@ -81,7 +87,7 @@ See `.env` for development defaults.
 I am using `yarn` to install the package.
 - `npm install -g yarn`
 
-### Installing dependencies
+### Install
 
 ```sh
 yarn
@@ -109,6 +115,12 @@ yarn prod
 yarn test
 ```
 
+### Running Generate Component
+
+```sh
+yarn gen
+```
+
 ### Running Linter
 
 ```sh
@@ -133,9 +145,5 @@ _Add details of how to access the app from within Chrome_
 
 To view the state in the app install [the Redux dev tools Chrome plugin](https://chrome.google.com/webstore/detail/remotedev/faicmgpfiaijcedapokpbdejaodbelph/related).
 
-## Deployment
-
-_to be completed_
-
 ## Question and Issues
-[Nextjs] (https://github.com/zeit/next.js/)
+(https://github.com/chauduong1192/web-next/issues)

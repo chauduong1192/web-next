@@ -1,0 +1,1 @@
+export const COMMON_ACTION = 'COMMON_ACTION';

@@ -1,0 +1,14 @@
+import { Thunk } from 'redux-testkit';
+import * as actions from '../../../redux/{{ camelCase fileName }}/actions';
+import * as {{ camelCase fileName }}Types from '../../../redux/{{ camelCase fileName }}/types';
+
+describe('{ camelCase fileName }} actions', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
+  it('should call action', () => {
+    const dispatches = Thunk(actions.{{ camelCase fileName }}Action).execute();
+    expect(dispatches[0].getAction()).toEqual({ type: {{ camelCase fileName }}Types.{{ constantCase fileName}}_ACTION, payload: true });
+  });
+});

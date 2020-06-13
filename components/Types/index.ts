@@ -5,7 +5,7 @@ export interface IBasicComponentProps {
   t?: (a: string, b?: any) => string;
   className?: string;
   language?: string;
-  children: any;
+  children?: any;
 }
 
 /**
