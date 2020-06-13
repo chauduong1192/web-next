@@ -1,0 +1,16 @@
+import { connect } from 'react-redux';
+
+import { commonAction } from 'redux/common/actions';
+import { getCommon } from 'redux/common/selectors';
+
+import { {{ properCase fileName }} } from './{{ properCase fileName }}';
+
+const mapStateToProps = state => ({
+  isCommon: getCommon(state),
+});
+
+const mapDispatchToProps = {
+  commonAction,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)({{ properCase fileName }});

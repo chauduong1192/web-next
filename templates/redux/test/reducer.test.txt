@@ -1,0 +1,20 @@
+import { Reducer } from 'redux-testkit';
+import reducer from '../../../redux/{{ camelCase fileName }}/reducer';
+import * as commonTypes from '../../../redux/{{ camelCase fileName }}/types';
+
+describe('{{ camelCase fileName }} reducer', () => {
+  const initialState = {
+    initialised: false,
+  };
+
+  it('should handle action', () => {
+    const action = { type: commonTypes.{{ constantCase fileName }}_ACTION };
+    const result = {
+      initialised: false,
+    };
+    Reducer(reducer)
+      .withState(initialState)
+      .expect(action)
+      .toReturnState(result);
+  });
+});

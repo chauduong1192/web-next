@@ -1,0 +1,4 @@
+import { key } from '.';
+import { I{{ properCase fileName }}State } from './reducer';
+
+export const getReducer = (state): I{{ properCase fileName }}State => state[key];

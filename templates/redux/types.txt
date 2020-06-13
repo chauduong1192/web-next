@@ -1,0 +1,1 @@
+export const {{ constantCase fileName }}_ACTION = '{{ constantCase fileName }}_ACTION';

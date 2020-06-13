@@ -1,0 +1,3 @@
+import { {{ properCase fileName }} } from './{{ properCase fileName }}';
+
+export default {{ properCase fileName }};

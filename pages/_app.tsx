@@ -69,6 +69,7 @@ class MyApp extends App<any, any> {
 
     persistStoreBetweenPageTransitions(this.state.store);
   }
+
   render() {
     const { Component, pageProps } = this.props;
     return (

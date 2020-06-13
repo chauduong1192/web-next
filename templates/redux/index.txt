@@ -1,7 +1,7 @@
 import { reducerRegistry } from '../reducer-registry';
 import reducer from './reducer';
 
-const key = 'test';
+const key = '{{ camelCase fileName }}';
 reducerRegistry.register(key, reducer);
 
 export { key };

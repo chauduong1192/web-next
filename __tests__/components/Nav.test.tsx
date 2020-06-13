@@ -1,7 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import Nav from '../../components/Nav';
 
-test('hello world', () => {
-  const wrapper = shallow(<p>Hello Jest!</p>);
-  expect(wrapper.text()).toMatch('Hello Jest!');
+describe('Nav', () => {
+  it('should render Nav', () => {
+    const wrapper = shallow(<Nav />);
+    expect(wrapper.exists()).toBe(true);
+  });
 });

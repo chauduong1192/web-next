@@ -1,0 +1,11 @@
+import { Selector } from 'redux-testkit';
+import * as selectors from '../../../redux/{{ camelCase fileName }}/selectors';
+
+describe('{{ camelCase fileName }} selector', () => {
+
+  it('should select all state in {{ camelCase fileName }}', () => {
+    const state = { {{ camelCase fileName }}: { initialised: false } };
+    const result = false;
+    Selector(selectors.getReducer).expect(state).toReturn(result);
+  });
+});

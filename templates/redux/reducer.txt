@@ -1,0 +1,26 @@
+import { IGenericStoreAction } from '@redux/types';
+
+import { {{ constantCase fileName }}_ACTION } from './types';
+
+export interface I{{ properCase fileName }}State {
+  initialised: boolean;
+}
+
+const initialState = {
+  initialised: false,
+};
+
+const reducer = (
+  state: I{{ properCase fileName }}State = initialState, action: IGenericStoreAction,
+) => {
+  switch (action.type) {
+    case {{ constantCase fileName }}_ACTION:
+      return {
+        ...state,
+      };
+    default:
+      return state;
+  }
+};
+
+export default reducer;

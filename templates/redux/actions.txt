@@ -1,0 +1,13 @@
+import { {{ constantCase fileName }}_ACTION } from './types';
+
+const {{ camelCase fileName }}Action = () =>
+(dispatch) => {
+  dispatch({
+    type: {{ constantCase fileName }}_ACTION,
+    payload: true,
+  });
+};
+
+export  {
+  {{ camelCase fileName }}Action,
+};

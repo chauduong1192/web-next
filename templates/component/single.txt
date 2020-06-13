@@ -1,0 +1,14 @@
+import React from 'react';
+import { IBasicComponentProps } from 'components/Types';
+
+interface I{{ properCase fileName }}Props extends IBasicComponentProps{}
+
+const {{ properCase fileName }} = (props: I{{ properCase fileName }}Props) => {
+  const { } = props;
+
+  return <>{{ properCase fileName }}</>;
+};
+
+{{ properCase fileName }}.defaultProps = {};
+
+export { {{ properCase fileName }} };
