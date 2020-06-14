@@ -16,7 +16,7 @@
     "analyze": "cross-env BUNDLE_ANALYZE=both next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
-    "test": "jest -u",
+    "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest -u --coverage",
     "gen": "plop",

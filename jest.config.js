@@ -20,7 +20,7 @@ module.exports = {
   collectCoverageFrom: [
     'components/*.tsx',
     'components/**/*.tsx',
-    'pages/*.{ts,tsx}',
+    // 'pages/*.{ts,tsx}',
     'redux/*/*.{ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
@@ -43,14 +43,14 @@ module.exports = {
     "@pages/(.*)": "<rootDir>/pages/$1",
     "@public/(.*)": "<rootDir>/public/$1",
     "@api/(.*)": "<rootDir>/api/$1",
-    "@i18nnext/(.*)": "<rootDir>/i18nnext.ts",
+    "@i18nnext": "<rootDir>/i18nnext.ts",
+  },
+  coverageThreshold: {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    }
   }
-  // coverageThreshold: {
-  //   "global": {
-  //     "branches": 80,
-  //     "functions": 80,
-  //     "lines": 80,
-  //     "statements": 80
-  //   }
-  // }
 }
