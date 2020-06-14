@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
 
-import { ILocationProps } from 'utils';
-import { name, themeColor, gtmCode, isProd, websiteUrl } from 'utils/config';
+import { ILocationProps } from '@utils/index';
+import { name, themeColor, gtmCode, isProd, websiteUrl } from '@utils/config';
 
 const ASSET_PATH = '_next/public';
 const getFullAssetPath = (assetPrefix: string = '') => `${assetPrefix}/${ASSET_PATH}`;

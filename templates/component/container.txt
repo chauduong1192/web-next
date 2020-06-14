@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import { commonAction } from 'redux/common/actions';
-import { getCommon } from 'redux/common/selectors';
+import { commonAction } from '@redux/common/actions';
+import { getCommon } from '@redux/common/selectors';
 
 import { {{ properCase fileName }} } from './{{ properCase fileName }}';
 

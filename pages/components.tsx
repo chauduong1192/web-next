@@ -2,7 +2,7 @@ import React from 'react';
 import css from 'styled-jsx/css';
 import Link from 'next/link';
 
-import { Button } from 'components/Common';
+import { Button } from '@components/Common';
 
 const style = css`
   .content {

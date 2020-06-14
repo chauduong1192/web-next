@@ -1,18 +1,17 @@
 import React from 'react';
-
-import { appWithTranslation } from 'i18nnext';
 import App from 'next/app';
 import Router from 'next/router';
-
-import Head from 'components/Head';
 import NProgress from 'nprogress';
 
+import { appWithTranslation } from '@i18nnext';
+import Head from '@components/Head';
+
 import { Provider } from 'react-redux';
-import configureStore from 'redux/store';
+import configureStore from '@redux/store';
 
-import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from 'utils';
+import { isServer, getStoreBetweenPageTransitions, persistStoreBetweenPageTransitions } from '@utils/index';
 
-import 'public/styles/index.css';
+import '@public/styles/index.css';
 
 const getOrInitReduxStore = (props) => {
   const { store } = props;

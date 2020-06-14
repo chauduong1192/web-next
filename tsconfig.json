@@ -18,10 +18,29 @@
       ],
       "@redux/*": [
         "redux/*"
-      ]
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
+      "@i18nnext": [
+        "i18nnext.ts"
+      ],
     },
     "lib": [
-      "es2018"
+      "es2018",
+      "dom"
     ],
     "module": "esnext",
     "target": "es2018",

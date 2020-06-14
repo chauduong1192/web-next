@@ -1,5 +1,5 @@
 import React from 'react';
-import { IBasicComponentProps } from 'components/Types';
+import { IBasicComponentProps } from '@components/Types';
 
 interface I{{ properCase fileName }}Props extends IBasicComponentProps{}
 

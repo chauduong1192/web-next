@@ -26,6 +26,7 @@
         "object-literal-sort-keys": [false],
         "no-submodule-imports": [false],
         "no-implicit-dependencies": [false],
-        "no-this-assignment": [true, {"allow-destructuring": true}]
+        "no-this-assignment": [true, {"allow-destructuring": true}],
+        "no-empty-interface": false
     }
 }

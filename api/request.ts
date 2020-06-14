@@ -1,5 +1,5 @@
 import * as fetch from 'isomorphic-fetch';
-import { apiUrl } from 'utils/config';
+import { apiUrl } from '@utils/config';
 
 const HOST = apiUrl ? `http://${apiUrl}` : 'http://localhost:8000';
 const BASE_URL = `${HOST}/api/v2`;

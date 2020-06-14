@@ -1,6 +1,6 @@
 import { Reducer } from 'redux-testkit';
-import reducer from '../../../redux/common/reducer';
-import * as commonTypes from '../../../redux/common/types';
+import reducer from '@redux/common/reducer';
+import * as commonTypes from '@redux/common/types';
 
 describe('common reducer', () => {
   const initialState = {

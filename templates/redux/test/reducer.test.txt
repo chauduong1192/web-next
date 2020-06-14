@@ -1,6 +1,6 @@
 import { Reducer } from 'redux-testkit';
-import reducer from '../../../redux/{{ camelCase fileName }}/reducer';
-import * as commonTypes from '../../../redux/{{ camelCase fileName }}/types';
+import reducer from '@redux/{{ camelCase fileName }}/reducer';
+import * as commonTypes from '@redux/{{ camelCase fileName }}/types';
 
 describe('{{ camelCase fileName }} reducer', () => {
   const initialState = {

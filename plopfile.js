@@ -23,7 +23,7 @@ module.exports = function (plop) {
 		if(!value) {
 			return 'File name is required';
 		}
-		if (!(/^[a-zA-Z0-9_.-]*$/).test(value)) {
+		if (!(/^[a-zA-Z_.-]*$/).test(value)) {
 			return 'File name must only contain alphanumeric characters';
 		}
 		return true;
@@ -110,7 +110,7 @@ module.exports = function (plop) {
 					},
 					{
 						...addDefault,
-						path: `${defaultPath}/index.tsx`,
+						path: `${defaultPath}/index.ts`,
 						templateFile: `${templatePath}/index.txt`,
 					},
 					{
@@ -154,7 +154,7 @@ module.exports = function (plop) {
 				.filter(fi => !(/^(index|types)$/).test(fi))
 				.map(re => ({
 					...addDefault,
-					path: `${destinationTest}/${re}.test.tsx`,
+					path: `${destinationTest}/${re}.test.ts`,
 					templateFile: `${baseTest}/${re}.test.txt`,
 				})),
 			];

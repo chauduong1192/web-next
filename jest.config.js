@@ -18,7 +18,8 @@ module.exports = {
     "node"
   ],
   collectCoverageFrom: [
-    'components/*.{ts,tsx}',
+    'components/*.tsx',
+    'components/**/*.tsx',
     'pages/*.{ts,tsx}',
     'redux/*/*.{ts,tsx}',
     '!**/*.d.ts',
@@ -35,6 +36,15 @@ module.exports = {
       "tsConfig": "<rootDir>/tsconfig.jest.json"
     }
   },
+  moduleNameMapper: {
+    "@components/(.*)": "<rootDir>/components/$1",
+    "@utils/(.*)": "<rootDir>/utils/$1",
+    "@redux/(.*)": "<rootDir>/redux/$1",
+    "@pages/(.*)": "<rootDir>/pages/$1",
+    "@public/(.*)": "<rootDir>/public/$1",
+    "@api/(.*)": "<rootDir>/api/$1",
+    "@i18nnext/(.*)": "<rootDir>/i18nnext.ts",
+  }
   // coverageThreshold: {
   //   "global": {
   //     "branches": 80,

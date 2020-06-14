@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { IBasicComponentProps } from 'components/Types';
+import { IBasicComponentProps } from '@components/Types';
 
-import { concatClasses } from 'utils';
+import { concatClasses } from '@utils/index';
 
 export interface IButtonProps extends IBasicComponentProps {
   isBusy?: boolean;

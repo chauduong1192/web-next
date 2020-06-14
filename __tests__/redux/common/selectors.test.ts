@@ -1,5 +1,5 @@
 import { Selector } from 'redux-testkit';
-import * as selectors from '../../../redux/common/selectors';
+import * as selectors from '@redux/common/selectors';
 
 describe('common selector', () => {
 

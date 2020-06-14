@@ -1,6 +1,6 @@
 import { Thunk } from 'redux-testkit';
-import * as actions from '../../../redux/common/actions';
-import * as commonTypes from '../../../redux/common/types';
+import * as actions from '@redux/common/actions';
+import * as commonTypes from '@redux/common/types';
 
 describe('common actions', () => {
   beforeEach(() => {
