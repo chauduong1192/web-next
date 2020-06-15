@@ -20,7 +20,6 @@ module.exports = {
   collectCoverageFrom: [
     'components/*.tsx',
     'components/**/*.tsx',
-    // 'pages/*.{ts,tsx}',
     'redux/*/*.{ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
