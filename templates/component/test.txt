@@ -4,8 +4,14 @@ import { shallow } from 'enzyme';
 import { {{ properCase fileName }} } from '@components/{{ properCase fileName }}';
 
 describe('{{ properCase fileName }}', () => {
+  let wrapper;
+  const props = {};
+
+  beforeEach(async () => {
+    wrapper = shallow(<{{ properCase fileName }} {...props} />);
+  });
+
   it('should render {{ properCase fileName }}', () => {
-    const wrapper = shallow(<{{ properCase fileName }} />);
     expect(wrapper.exists()).toBe(true);
   });
 });

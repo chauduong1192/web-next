@@ -5,8 +5,6 @@ import Head from '@components/Head';
 const Home = () => (
   <div>
     <Head title="Home" />
-    {/* <Nav /> */}
-
     <div className="hero">
       <h1 className="title">Welcome to web next</h1>
       <p className="description">
@@ -17,6 +15,12 @@ const Home = () => (
           <a className="card">
             <h3>Components &rarr;</h3>
             <p>How to use components in this sources</p>
+          </a>
+        </Link>
+        <Link href="/todos">
+          <a className="card">
+            <h3>Demo fetch todo list &rarr;</h3>
+            <p>How to use redux thunk in this sources</p>
           </a>
         </Link>
       </div>

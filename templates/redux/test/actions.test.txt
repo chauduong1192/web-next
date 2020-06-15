@@ -2,7 +2,7 @@ import { Thunk } from 'redux-testkit';
 import * as actions from '@redux/{{ camelCase fileName }}/actions';
 import * as {{ camelCase fileName }}Types from '@redux/{{ camelCase fileName }}/types';
 
-describe('{ camelCase fileName }} actions', () => {
+describe('{{ camelCase fileName }} actions', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });

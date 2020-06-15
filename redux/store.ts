@@ -9,6 +9,7 @@ import reduxThunk from 'redux-thunk';
 import { reducerRegistry } from './reducer-registry';
 
 import './common';
+import './todo';
 
 const configureStoreEnhancers = () => {
   let composeEnhancers = compose;

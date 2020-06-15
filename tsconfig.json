@@ -58,7 +58,8 @@
     "node_modules",
     ".next",
     "coverage",
-    "templates"
+    "templates",
+    "__tests__"
   ],
   "include": [
     "next-env.d.ts",

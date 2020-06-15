@@ -1,0 +1,11 @@
+import { mapStateToProps } from '@components/{{ properCase fileName }}/{{ properCase fileName }}Container';
+
+describe('{{ properCase fileName }}Container', () => {
+
+  it('should map state in mapStateToProps', () => {
+    const initialState = {
+      {{ camelCase fileName }}: {}
+    }
+    expect(mapStateToProps()).toEqual(initialState.{{ camelCase fileName }});
+  });
+});

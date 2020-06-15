@@ -5,6 +5,7 @@ import nextI18next from '../../i18nnext';
 import prettyUrlRouter from './prettyUrlRouter';
 import staticAssets from './staticAssets';
 import wildCard from './wildcard';
+import proxyRouters from './proxyRouters';
 
 const assetPrefix = process.env.ASSET_PREFIX;
 
@@ -20,6 +21,9 @@ const routes = (props) => {
 
   // handle i18n translation
   router.use(nextI18NextMiddleware(nextI18next));
+
+  // handle proxy
+  router.use(proxyRouters());
 
   // handle all routers
   router.use(prettyUrlRouter(props));

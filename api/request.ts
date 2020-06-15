@@ -1,12 +1,16 @@
 import * as fetch from 'isomorphic-fetch';
 import { apiUrl } from '@utils/config';
 
-const HOST = apiUrl ? `http://${apiUrl}` : 'http://localhost:8000';
-const BASE_URL = `${HOST}/api/v2`;
+const getApiUrl = (req?) => {
+  if (req) {
+    return apiUrl;
+  }
+  return `${window.location.origin}`;
+};
 
-const request: any = async (uri: string, method: string, body?: any, cookie?: any) => {
-
-  const res = await fetch(`${BASE_URL}/${uri}`, {
+const request: any = async (req?: any, uri?: string, method?: string, body?: any, cookie?: any) => {
+  const url = `${getApiUrl(req)}/api/${uri}`;
+  const res = await fetch(url, {
     method,
     body,
     credentials: 'include',
@@ -23,13 +27,12 @@ const request: any = async (uri: string, method: string, body?: any, cookie?: an
   return json;
 };
 
-const $get = async (uri: string, cookie?: any) => request(uri, 'GET', null, cookie);
+const $get = async (req?: any, uri?: string, cookie?: any) => request(req, uri, 'GET', null, cookie);
 const $post = async (uri: string, body?: any) => request(uri, 'POST', body);
 const $put = async (uri: string, body?: any) => request(uri, 'PUT', body);
 const $delete = async (uri: string, body?: any) => request(uri, 'DELETE', body);
 
 export {
-  BASE_URL,
   request,
   $get,
   $post,

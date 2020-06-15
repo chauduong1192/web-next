@@ -10,6 +10,7 @@ describe('Button', () => {
     size: 'sm',
     isBusy: false,
   };
+
   beforeEach(async () => {
     wrapper = shallow(<Button {...props} />);
   });

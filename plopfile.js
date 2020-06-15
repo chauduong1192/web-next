@@ -118,6 +118,11 @@ module.exports = function (plop) {
 						path: `${defaulTesttPath}/{{properCase fileName}}.test.tsx`,
 						templateFile: `${templateTestPath}/single.test.txt`,
 					},
+					{
+						...addDefault,
+						path: `${defaulTesttPath}/{{properCase fileName}}Container.test.tsx`,
+						templateFile: `${templateTestPath}/singleContainer.test.txt`,
+					},
 				];
 
 				actions = [...actions, ...manyActions];
