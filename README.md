@@ -10,12 +10,6 @@
   <a href="https://github.com/chauduong1192/web-next/runs/765177210?check_suite_focus=true">
     <img src="https://github.com/chauduong1192/web-next/workflows/CI/badge.svg" alt="Build Status" />
   </a>
-  <a href="https://david-dm.org/chauduong1192/web-next" title="dependencies status">
-    <img src="https://david-dm.org/chauduong1192/web-next/status.svg"/>
-  </a>
-  <a href="https://david-dm.org/chauduong1192/web-next?type=dev" title="devDependencies status">
-    <img src="https://david-dm.org/chauduong1192/web-next/dev-status.svg"/>
-  </a>
 </div>
 
 The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..
