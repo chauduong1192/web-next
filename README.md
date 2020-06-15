@@ -95,13 +95,13 @@ yarn
 
 ### Run the app
 
-#Running the app with the dev environment
+Running the app with the dev environment
 
 ```sh
 yarn dev
 ```
 
-#Running the app with the production environment
+Running the app with the production environment
 
 ```sh
 yarn prod
@@ -115,22 +115,23 @@ yarn prod
 yarn test
 ```
 
-### Running Generate Component
+### Running Generate Component or Redux template
+
+Generate component
+```sh
+yarn gen type_of_gen type_of_component component_name 
+```
+type_of_gen: Type of generator as component, redux.
+type_of_component: Type of component as single, many.
 
 ```sh
-yarn gen
+Ex: yarn gen component single ComponentA 
 ```
 
 ### Running Linter
 
 ```sh
 yarn lint
-```
-
-### Running Linter fix
-
-```sh
-yarn lint-fix
 ```
 
 ### Running Bunddle Analyze
