@@ -1,37 +1,38 @@
 import React from 'react';
-import css from 'styled-jsx/css';
+import styled from 'styled-components';
 import Link from 'next/link';
 
 import { Button } from '@components/Common';
 
-const style = css`
+const Content = styled.div`
   .content {
     padding: 2rem;
   }
-  .content .wrap {
+  .wrap {
      display: flex;
     justify-content: space-around;
   }
-  .content .component {
+  .component {
     font-weight: bold;
     color: black;
     flex-direction: column;
     display: flex;
   }
-  :global(.primary),
-  :global(.btn-primary) {
+
+  & .primary,
+  & .btn-primary {
     background-color: blue;
     color: white;
   }
-  :global(.warning) {
+
+  & .warning {
     background-color: yellow;
     color: black;
   }
 `;
 
 const Component = () => (
-  <div className="content">
-    <style jsx>{style}</style>
+  <Content className="content">
     <Link href="/"><a>Back</a></Link>
     <div className="wrap">
       <div className="component">
@@ -44,7 +45,7 @@ const Component = () => (
         </Button>
       </div>
     </div>
-  </div>
+  </Content>
 );
 
 Component.getInitialProps = async () => ({

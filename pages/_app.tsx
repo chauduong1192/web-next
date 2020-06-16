@@ -2,6 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import { ThemeProvider } from 'styled-components';
 
 import { appWithTranslation } from '@i18nnext';
 import Head from '@components/Head';
@@ -30,6 +31,12 @@ const hookIntoRouterCallbacks = () => {
   });
   Router.events.on('routeChangeComplete', () => NProgress.done());
   Router.events.on('routeChangeError', () => NProgress.done());
+};
+
+const theme = {
+  colors: {
+    primary: '#0070f3',
+  },
 };
 
 class MyApp extends App<any, any> {
@@ -71,11 +78,15 @@ class MyApp extends App<any, any> {
 
   render() {
     const { Component, pageProps } = this.props;
+    const { store } = this.state;
+
     return (
-      <Provider store={this.state.store}>
-          <Head />
-          <Component {...pageProps} store={this.state.store} />
-      </Provider>
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+            <Head />
+            <Component {...pageProps} store={store} />
+        </Provider>
+      </ThemeProvider>
     );
   }
 }
