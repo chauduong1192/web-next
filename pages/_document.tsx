@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import Document, { Head, Main, NextScript, DocumentProps } from 'next/document';
+import Document, { Head, Html, Main, NextScript, DocumentProps } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 import { ILocationProps } from '@utils/index';
 import { name, themeColor, gtmCode, isProd, websiteUrl } from '@utils/config';
@@ -12,13 +13,30 @@ interface IMyDocumentProps extends DocumentProps {
 }
 
 class MyDocument extends Document<IMyDocumentProps> {
-  static getInitialProps = async (ctx) => {
-    const initialProps = await Document.getInitialProps(ctx);
+  static async getInitialProps(ctx) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
 
-    return {
-      ...initialProps,
-      // location: getLocation(req),
-    };
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   // https://github.com/joshbuchea/HEAD#facebook-open-graph
@@ -186,7 +204,7 @@ class MyDocument extends Document<IMyDocumentProps> {
   render() {
     const { __NEXT_DATA__: { props } } = this.props;
     return (
-      <html lang={props.initialLanguage}>
+      <Html lang={props.initialLanguage}>
         <Head>
           <base href="/" />
 
@@ -195,31 +213,24 @@ class MyDocument extends Document<IMyDocumentProps> {
           <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-          {/* OG */}
           {this.renderOGTags()}
 
-          {/* iOS & Android */}
           {this.renderPwaTags()}
 
-          {/* Icons */}
           {this.renderIconTags()}
 
-          {/* Other Tags */}
           {this.renderOtherTags()}
 
-          {/* GTM */}
           {this.renderGTM()}
 
         </Head>
 
         <body>
-          {/* {this.renderGTM(true)} */}
+          {this.renderGTM(true)}
           <Main />
-
           <NextScript />
-
         </body>
-      </html>
+      </Html>
     );
   }
 }

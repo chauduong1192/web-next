@@ -51,6 +51,7 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.1",
     "webpack": "^4.29.4"
   },
   "devDependencies": {
@@ -60,8 +61,8 @@
     "@types/jest": "^26.0.0",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.1",
-    "@types/styled-jsx": "^2.2.8",
     "babel-plugin-inline-react-svg": "^1.0.1",
+    "babel-plugin-styled-components": "^1.10.7",
     "copy-webpack-plugin": "^4.6.0",
     "cz-conventional-changelog": "2.1.0",
     "enzyme": "^3.11.0",
