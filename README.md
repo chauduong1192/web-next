@@ -10,6 +10,9 @@
   <a href="https://github.com/chauduong1192/web-next/runs/765177210?check_suite_focus=true">
     <img src="https://github.com/chauduong1192/web-next/workflows/CI/badge.svg" alt="Build Status" />
   </a>
+  <a href="https://github.com/styled-components/styled-components">
+    <img src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e" alt="Build Status" />
+  </a>
 </div>
 
 The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..
