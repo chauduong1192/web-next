@@ -15,7 +15,9 @@
                       "displayName": true,
                       "preprocess": false
                     }
-                ]
+                ],
+                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-proposal-private-methods"
             ]
         },
         "production": {
