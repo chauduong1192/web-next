@@ -7,7 +7,9 @@
             "plugins": [
                 "inline-dotenv",
                 "transform-inline-environment-variables",
-                "inline-react-svg"
+                "inline-react-svg",
+                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-proposal-private-methods",
             ]
         },
         "production": {
