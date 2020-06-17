@@ -23,7 +23,7 @@
     "gen:single": "plop component single",
     "gen:many": "plop component many",
     "gen:redux": "plop redux",
-    "storybook": "NODE_PATH=./ start-storybook -p 3001 -c .storybook -s ./"
+    "storybook": "NODE_PATH=./ start-storybook -p 5000 -c .storybook -s ./"
   },
   "dependencies": {
     "@types/node": "^14.0.13",
