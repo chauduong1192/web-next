@@ -72,6 +72,12 @@ const Home = () => (
             <p>How to use redux thunk in this sources</p>
           </a>
         </Link>
+        <Link href="/login">
+          <a className="card">
+            <h3>Demo login page &rarr;</h3>
+            <p>How to use react hook form</p>
+          </a>
+        </Link>
       </div>
     </div>
 

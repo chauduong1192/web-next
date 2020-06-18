@@ -28,6 +28,9 @@ const prettyUrlRouter = ({ app }) => {
   route.get('/todos', async (req, res) => {
     return app.render(req, res, '/todos', getGenericReqParams(req));
   });
+  route.get('/login', async (req, res) => {
+    return app.render(req, res, '/login', getGenericReqParams(req));
+  });
 
   return route;
 };

@@ -14,12 +14,11 @@ export interface IButtonProps extends IBasicComponentProps {
   renderLoading?: (component: React.ReactNode) => React.ReactNode;
 }
 
-const getClassNames = ({ icon, className, color, rounded, size }) => {
+const getClassNames = ({ icon, className, color, size }) => {
   return concatClasses(
     `btn-${color}`,
     className,
     icon && 'with-icon',
-    rounded && 'rounded',
     size && `btn-${size}`,
   );
 };
@@ -27,7 +26,7 @@ const getClassNames = ({ icon, className, color, rounded, size }) => {
 const Button =
   ({ children, className, icon, isBusy, color, rounded, size, renderLoading, ...rest }: IButtonProps) =>
   <button
-    className={getClassNames({ icon, className, color, rounded, size })}
+    className={getClassNames({ icon, className, color, size })}
     {...rest}
     disabled={isBusy}>
 
@@ -46,7 +45,6 @@ const Button =
 
 Button.defaultProps = {
   color: 'base',
-  rounded: false,
 };
 
 export { Button };

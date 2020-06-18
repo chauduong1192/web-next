@@ -23,7 +23,7 @@
     "gen:single": "plop component single",
     "gen:many": "plop component many",
     "gen:redux": "plop redux",
-    "storybook": "NODE_PATH=./ start-storybook -p 3001 -c .storybook -s ./"
+    "storybook": "NODE_PATH=./ start-storybook -p 3001 -c .storybook"
   },
   "dependencies": {
     "@types/node": "^14.0.13",
@@ -49,6 +49,7 @@
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hook-form": "^5.7.2",
     "react-i18next": "^10.1.2",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
