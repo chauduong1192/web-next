@@ -51,6 +51,7 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^10.1.2",
     "react-redux": "^6.0.0",
+    "rebass": "^4.0.7",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.1.1",

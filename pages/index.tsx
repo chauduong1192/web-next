@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import Head from '@components/Head';
 import styled from 'styled-components';
+import { Button } from 'rebass/styled-components';
+
+import Head from '@components/Head';
 
 const HomeContainer = styled.div`
   .hero {
@@ -72,6 +74,7 @@ const Home = () => (
             <p>How to use redux thunk in this sources</p>
           </a>
         </Link>
+        <Button bg="secondary">test</Button>
       </div>
     </div>
 
