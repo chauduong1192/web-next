@@ -9,7 +9,7 @@ import routes from './routes';
 
 const app = next({ dev });
 const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const cookieSecret = process.env.COOKIE_SECRET;
 const localCompression = process.env.LOCAL_COMPRESSION;
 
