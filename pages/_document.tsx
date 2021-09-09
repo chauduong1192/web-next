@@ -13,6 +13,7 @@ interface IMyDocumentProps extends DocumentProps {
 }
 
 class MyDocument extends Document<IMyDocumentProps> {
+
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -210,7 +211,6 @@ class MyDocument extends Document<IMyDocumentProps> {
 
           <meta charSet="utf-8" />
           <meta httpEquiv="Content-type" content="text/html;charset=UTF-8" />
-          <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
           {this.renderOGTags()}

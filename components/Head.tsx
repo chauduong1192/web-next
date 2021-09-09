@@ -22,7 +22,7 @@ const Head = ({
       <title key="title">{title}</title>
       <meta name="description" content={desc} key="description" />
       {keywords && <meta name="keywords" content={keyws} key="keywords" />}
-
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2" />
       <meta property="og:title" content={title} key="og:title" />
       <meta property="og:description" content={description} key="og:desc" />
     </NextHead>
