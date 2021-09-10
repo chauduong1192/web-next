@@ -1,43 +1,46 @@
-const dev = require('./utils').isDev();
-if (dev) { require('dotenv').config(); }
+const dev = require('./utils').isDev()
+if (dev) {
+  require('dotenv').config()
+}
 
-import cookieParser from 'cookie-parser';
-import express from 'express';
-import next from 'next';
+import cookieParser from 'cookie-parser'
+import express from 'express'
+import next from 'next'
 
-import routes from './routes';
+import routes from './routes'
 
-const app = next({ dev });
-const host = process.env.HOST || '0.0.0.0';
-const port = process.env.PORT || 3000;
-const cookieSecret = process.env.COOKIE_SECRET;
-const localCompression = process.env.LOCAL_COMPRESSION;
+const app = next({ dev })
+const host = process.env.HOST || '0.0.0.0'
+const port = process.env.PORT || 3000
+const cookieSecret = process.env.COOKIE_SECRET
+const localCompression = process.env.LOCAL_COMPRESSION
 
-app.prepare()
+app
+  .prepare()
   .then(() => {
-    const server = express();
+    const server = express()
 
     // set cookie
-    server.use(cookieParser(cookieSecret));
+    server.use(cookieParser(cookieSecret))
 
     if (localCompression) {
-      const compression = require('compression');
-      server.use(compression());
+      const compression = require('compression')
+      server.use(compression())
     }
 
     // routes
-    server.use(routes({ app, dev }));
+    server.use(routes({ app, dev }))
 
     // start app
     server.listen(port, host, (err) => {
-      if (err) { throw err; }
-      // tslint:disable-next-line:no-console
-      console.log(`> App ready at http://${host}:${port}`);
-    });
+      if (err) {
+        throw err
+      }
+      console.log(`> App ready at http://${host}:${port}`)
+    })
 
-    return server;
+    return server
   })
   .catch((err) => {
-    // tslint:disable-next-line:no-console
-    console.log('> App failed to start', err);
-  });
+    console.log('> App failed to start', err)
+  })
