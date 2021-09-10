@@ -1,52 +1,39 @@
-import {
-  applyMiddleware,
-  combineReducers,
-  compose,
-  createStore,
-} from 'redux';
-import reduxThunk from 'redux-thunk';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import reduxThunk from 'redux-thunk'
 
-import { reducerRegistry } from './reducer-registry';
+import { reducerRegistry } from './reducer-registry'
 
-import './common';
-import './todo';
+import './common'
+import './todo'
 
 const configureStoreEnhancers = () => {
-  let composeEnhancers = compose;
+  let composeEnhancers = compose
 
   if (process.env.NODE_ENV !== 'production') {
     if (typeof window !== 'undefined') {
-      composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composeEnhancers;
+      composeEnhancers =
+        (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composeEnhancers
     }
   }
 
-  const enhancers = composeEnhancers(
-    applyMiddleware(reduxThunk),
-  );
+  const enhancers = composeEnhancers(applyMiddleware(reduxThunk))
 
-  return enhancers;
-};
+  return enhancers
+}
 
-const configureStore = (initialState?: object) => {
+const configureStore = (initialState?: any) => {
+  const registeredReducers = reducerRegistry.getCombinedReducers(initialState)
+  const reducers = combineReducers(registeredReducers)
 
-  const registeredReducers = reducerRegistry.getCombinedReducers(initialState);
-  const reducers = combineReducers(registeredReducers);
+  const enhancers = configureStoreEnhancers()
 
-  const enhancers = configureStoreEnhancers();
-
-  const store = createStore(
-    reducers,
-    initialState,
-    enhancers,
-  );
+  const store = createStore(reducers, initialState, enhancers)
 
   reducerRegistry.setChangeListener(() => {
-    store.replaceReducer(
-      combineReducers(reducerRegistry.getCombinedReducers()),
-    );
-  });
+    store.replaceReducer(combineReducers(reducerRegistry.getCombinedReducers()))
+  })
 
-  return store;
-};
+  return store
+}
 
-export default configureStore;
+export default configureStore

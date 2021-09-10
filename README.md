@@ -15,7 +15,7 @@
   </a>
 </div>
 
-The source code using nextjs, reactjs, redux, es6, ts, express, tslint, jest..
+The source code using nextjs, reactjs, redux, es6, ts, express, eslint, typescript, jest..
 
 ## Links
 
@@ -70,18 +70,19 @@ other static resources like images or compiled CSS in there.
 
 See `.env` for development defaults.
 
-| Variable               | Notes                                                              |
-| -----------------      | ------------------------------------------------------------------ |
-| `NODE_ENV`             | Node environment variables. Default: development                   |
-| `HOST`                 | Host of app. Default: localhost                                    |
-| `PORT`                 | Port of app. Default: 3000                                         |
-| `API_URL`              | Url api service. Need to change this if you have other url for api |
+| Variable   | Notes                                                              |
+| ---------- | ------------------------------------------------------------------ |
+| `NODE_ENV` | Node environment variables. Default: development                   |
+| `HOST`     | Host of app. Default: localhost                                    |
+| `PORT`     | Port of app. Default: 3000                                         |
+| `API_URL`  | Url api service. Need to change this if you have other url for api |
 
 ### Prerequisites
 
 - [NodeJS](htps://nodejs.org), version >= 10.0.0 . (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 
 I am using `yarn` to install the package.
+
 - `npm install -g yarn`
 
 ### Install
@@ -115,14 +116,16 @@ yarn test
 ### Running Generate Component or Redux template
 
 Generate component
+
 ```sh
-yarn gen type_of_gen type_of_component component_name 
+yarn gen type_of_gen type_of_component component_name
 ```
+
 type_of_gen: Type of generator as component, redux.
 type_of_component: Type of component as single, many.
 
 ```sh
-Ex: yarn gen component single ComponentA 
+Ex: yarn gen component single ComponentA
 ```
 
 ### Running Linter
@@ -144,4 +147,5 @@ _Add details of how to access the app from within Chrome_
 To view the state in the app install [the Redux dev tools Chrome plugin](https://chrome.google.com/webstore/detail/remotedev/faicmgpfiaijcedapokpbdejaodbelph/related).
 
 ## Question and Issues
+
 (https://github.com/chauduong1192/web-next/issues)
