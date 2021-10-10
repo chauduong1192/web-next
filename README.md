@@ -53,7 +53,6 @@ Our source is created by CNA, after createing it should look something like:
 ├── templates
     └── components
     └── redux
-    └── storybook
 └── yarn.lock
 ├── README.md
 ```
